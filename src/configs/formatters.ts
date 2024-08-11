@@ -86,11 +86,27 @@ export async function formatters(
       },
     },
     {
-      files: [GLOB_JSON, GLOB_JSONC],
+      files: [GLOB_JSON],
       languageOptions: {
         parser: parserPlain,
       },
       name: "xwbx/formatter/json",
+      rules: {
+        "format/prettier": [
+          "error",
+          {
+            ...prettierOptions,
+            parser: "json",
+          },
+        ],
+      },
+    },
+    {
+      files: [GLOB_JSONC],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: "xwbx/formatter/jsonc",
       rules: {
         "format/prettier": [
           "error",
@@ -106,7 +122,7 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
-      name: "xwbx/formatter/json",
+      name: "xwbx/formatter/json5",
       rules: {
         "format/prettier": [
           "error",
