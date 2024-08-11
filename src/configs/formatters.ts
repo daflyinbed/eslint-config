@@ -5,6 +5,9 @@ import {
   GLOB_CSS,
   GLOB_GRAPHQL,
   GLOB_HTML,
+  GLOB_JSON,
+  GLOB_JSON5,
+  GLOB_JSONC,
   GLOB_LESS,
   GLOB_MARKDOWN,
   GLOB_POSTCSS,
@@ -80,6 +83,38 @@ export async function formatters(
       name: "xwbx/formatter/jslike",
       rules: {
         "format/prettier": ["error", { ...prettierOptions, parser: undefined }],
+      },
+    },
+    {
+      files: [GLOB_JSON, GLOB_JSONC],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: "xwbx/formatter/json",
+      rules: {
+        "format/prettier": [
+          "error",
+          {
+            ...prettierOptions,
+            parser: "jsonc",
+          },
+        ],
+      },
+    },
+    {
+      files: [GLOB_JSON5],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: "xwbx/formatter/json",
+      rules: {
+        "format/prettier": [
+          "error",
+          {
+            ...prettierOptions,
+            parser: "json5",
+          },
+        ],
       },
     },
   ];
