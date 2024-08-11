@@ -76,6 +76,7 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
+      ignores: [`${GLOB_ASTRO}/**`],
       name: "xwbx/formatter/jslike",
       rules: {
         "format/prettier": ["error", { ...prettierOptions, parser: undefined }],
