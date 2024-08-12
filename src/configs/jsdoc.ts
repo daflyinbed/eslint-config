@@ -1,5 +1,5 @@
 import { interopDefault } from "../utils";
-import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
+import type { TypedFlatConfigItem } from "../types";
 
 export async function jsdoc(): Promise<TypedFlatConfigItem[]> {
   return [

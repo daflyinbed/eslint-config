@@ -9,14 +9,10 @@ export async function comments(): Promise<TypedFlatConfigItem[]> {
         "eslint-comments": pluginComments,
       },
       rules: {
-        ...pluginComments.configs.recommended.rules,
-        "eslint-comments/disable-enable-pair": [
-          "error",
-          { allowWholeFile: true },
-        ],
-
-        // common in code generation result
-        "eslint-comments/no-unlimited-disable": ["off"],
+        "eslint-comments/no-aggregating-enable": "error",
+        "eslint-comments/no-duplicate-disable": "error",
+        "eslint-comments/no-unlimited-disable": "error",
+        "eslint-comments/no-unused-enable": "error",
       },
     },
   ];
