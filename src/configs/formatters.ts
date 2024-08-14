@@ -24,15 +24,34 @@ import type { Options as PrettierOptions } from "prettier";
 export async function formatters(
   options: OptionsFormatters | true = {},
 ): Promise<TypedFlatConfigItem[]> {
+  let prettierOptions: PrettierOptions = {
+    tabWidth: 2,
+    useTabs: false,
+    trailingComma: "all",
+    singleQuote: false,
+    semi: true,
+  };
+  const defaultOptions = {
+    astro: isPackageExists("prettier-plugin-astro"),
+    css: true,
+    graphql: true,
+    html: true,
+    markdown: true,
+    slidev: isPackageExists("@slidev/cli"),
+    xml: isPackageExists("@prettier/plugin-xml"),
+  };
   if (options === true) {
     options = {
-      astro: isPackageExists("prettier-plugin-astro"),
-      css: true,
-      graphql: true,
-      html: true,
-      markdown: true,
-      slidev: isPackageExists("@slidev/cli"),
-      xml: isPackageExists("@prettier/plugin-xml"),
+      ...defaultOptions,
+    };
+  } else {
+    prettierOptions = {
+      ...defaultOptions,
+      ...options.prettierOptions,
+    };
+    options = {
+      ...defaultOptions,
+      ...options,
     };
   }
 
@@ -50,15 +69,6 @@ export async function formatters(
     throw new Error(
       "`slidev` option only works when `markdown` is enabled with `prettier`",
     );
-
-  const prettierOptions: PrettierOptions = {
-    tabWidth: 2,
-    useTabs: false,
-    trailingComma: "all",
-    singleQuote: false,
-    semi: true,
-    ...options.prettierOptions,
-  };
 
   const prettierXmlOptions = {
     xmlQuoteAttributes: "double",
@@ -135,7 +145,7 @@ export async function formatters(
     },
   ];
 
-  if (options.css) {
+  if (options.css ?? true) {
     configs.push(
       {
         files: [GLOB_CSS, GLOB_POSTCSS],
@@ -229,8 +239,6 @@ export async function formatters(
   }
 
   if (options.markdown) {
-    const formater = options.markdown === true ? "prettier" : options.markdown;
-
     const GLOB_SLIDEV = !options.slidev
       ? []
       : options.slidev === true
@@ -245,7 +253,7 @@ export async function formatters(
       },
       name: "xwbx/formatter/markdown",
       rules: {
-        [`format/${formater}`]: [
+        [`format/prettier`]: [
           "error",
           {
             ...prettierOptions,
