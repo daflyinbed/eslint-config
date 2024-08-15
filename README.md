@@ -236,7 +236,7 @@ We also provided the `overrides` options in each integration to make it easier:
 
 ```js
 // eslint.config.js
-import xwbx from "@antfu/eslint-config";
+import xwbx from "@xwbx/eslint-config";
 
 export default xwbx({
   vue: {
