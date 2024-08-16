@@ -27,7 +27,6 @@ import {
   yaml,
 } from "./configs";
 import { interopDefault, isInEditorEnv } from "./utils";
-// import { formatters } from './configs/formatters'
 import type { RuleOptions } from "./typegen";
 import type {
   Awaitable,
@@ -137,9 +136,14 @@ export function xwbx(
     command(),
 
     sortImport(),
-    formatters(options.formatters ?? true),
   );
-
+  if (options.formatters ?? true) {
+    configs.push(
+      formatters(
+        typeof options.formatters === "object" ? options.formatters : undefined,
+      ),
+    );
+  }
   if (enableVue) {
     componentExts.push("vue");
   }
