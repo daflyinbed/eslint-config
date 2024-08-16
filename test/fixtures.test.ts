@@ -15,18 +15,19 @@ afterAll(async () => {
 runWithConfig("all", {
   typescript: true,
   vue: true,
-  svelte: true,
   astro: true,
   formatters: true,
 });
 runWithConfig("no-style", {
   typescript: true,
   vue: true,
+  astro: true,
   formatters: false,
 });
 runWithConfig("tab-single-quotes", {
   typescript: true,
   vue: true,
+  astro: true,
   formatters: {
     prettierOptions: {
       useTabs: true,
