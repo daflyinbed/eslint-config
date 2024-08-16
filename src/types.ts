@@ -353,8 +353,12 @@ export interface OptionsConfig
    *
    * Requires installing:
    * - `eslint-plugin-format`
+   *
+   * When set to `true`, it will enable all formatters.
+   *
+   * @default true
    */
-  formatters?: OptionsFormatters;
+  formatters?: boolean | OptionsFormatters;
 
   /**
    * Control to disable some rules in editors.

@@ -22,7 +22,7 @@ import type { OptionsFormatters, TypedFlatConfigItem } from "../types";
 import type { Options as PrettierOptions } from "prettier";
 
 export async function formatters(
-  options: OptionsFormatters | true = {},
+  options?: OptionsFormatters,
 ): Promise<TypedFlatConfigItem[]> {
   let prettierOptions: PrettierOptions = {
     tabWidth: 2,
@@ -40,7 +40,7 @@ export async function formatters(
     slidev: isPackageExists("@slidev/cli"),
     xml: isPackageExists("@prettier/plugin-xml"),
   };
-  if (options === true) {
+  if (!options) {
     options = {
       ...defaultOptions,
     };
