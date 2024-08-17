@@ -16,7 +16,7 @@ import {
   GLOB_VUE,
   GLOB_XML,
 } from "../globs";
-import { pluginFormat } from "../plugins";
+import { pluginFormat, pluginStylistic } from "../plugins";
 import { ensurePackages, parserPlain } from "../utils";
 import type { OptionsFormatters, TypedFlatConfigItem } from "../types";
 import type { Options as PrettierOptions } from "prettier";
@@ -30,6 +30,7 @@ export async function formatters(
     trailingComma: "all",
     singleQuote: false,
     semi: true,
+    endOfLine: "lf",
   };
   const defaultOptions = {
     astro: isPackageExists("prettier-plugin-astro"),
@@ -82,6 +83,7 @@ export async function formatters(
       name: "xwbx/formatter/setup",
       plugins: {
         format: pluginFormat,
+        style: pluginStylistic,
       },
     },
     {
@@ -92,6 +94,11 @@ export async function formatters(
       ignores: [`${GLOB_ASTRO}/**`],
       name: "xwbx/formatter/jslike",
       rules: {
+        "style/quotes": [
+          "error",
+          prettierOptions.singleQuote ? "single" : "double",
+          { allowTemplateLiterals: false },
+        ],
         "format/prettier": ["error", { ...prettierOptions, parser: undefined }],
       },
     },
@@ -253,7 +260,7 @@ export async function formatters(
       },
       name: "xwbx/formatter/markdown",
       rules: {
-        [`format/prettier`]: [
+        "format/prettier": [
           "error",
           {
             ...prettierOptions,

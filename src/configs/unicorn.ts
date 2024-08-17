@@ -34,7 +34,7 @@ export async function unicorn(): Promise<TypedFlatConfigItem[]> {
         "unicorn/no-single-promise-in-promise-methods": "error",
         "unicorn/no-static-only-class": "error",
         "unicorn/no-unnecessary-await": "error",
-        "unicorn/no-zero-fractions": `error`,
+        "unicorn/no-zero-fractions": "error",
         "unicorn/prefer-add-event-listener": "error",
         "unicorn/prefer-array-find": "error",
         "unicorn/prefer-array-flat-map": "error",
