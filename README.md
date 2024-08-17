@@ -101,6 +101,7 @@ const prettierOptions = {
   trailingComma: "all",
   singleQuote: false,
   semi: true,
+  endOfLine: "lf",
 };
 ```
 
