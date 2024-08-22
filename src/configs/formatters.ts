@@ -97,7 +97,7 @@ export async function formatters(
         "style/quotes": [
           "error",
           prettierOptions.singleQuote ? "single" : "double",
-          { allowTemplateLiterals: false },
+          { allowTemplateLiterals: false, avoidEscape: true },
         ],
         "format/prettier": ["error", { ...prettierOptions, parser: undefined }],
       },
