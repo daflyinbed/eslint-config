@@ -98,6 +98,7 @@ export async function javascript(
         "no-lone-blocks": "error",
         "no-loss-of-precision": "error",
         "no-misleading-character-class": "error",
+        "no-invalid-this": "error",
         "no-multi-str": "error",
         "no-new": "error",
         "no-new-func": "error",
@@ -175,10 +176,12 @@ export async function javascript(
         "no-unused-vars": [
           "error",
           {
-            args: "none",
+            args: "after-used",
+            argsIgnorePattern: "^_",
             caughtErrors: "none",
             ignoreRestSiblings: true,
             vars: "all",
+            varsIgnorePattern: "^_",
           },
         ],
         "no-use-before-define": [
