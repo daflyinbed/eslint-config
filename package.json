@@ -32,6 +32,7 @@
     "prepare": "node .husky/install.mjs"
   },
   "peerDependencies": {
+    "@prettier/plugin-xml": "^3.4.1",
     "@unocss/eslint-plugin": ">=0.50.0",
     "astro-eslint-parser": "^1.0.2",
     "eslint": ">=8.40.0",
@@ -39,6 +40,9 @@
     "prettier-plugin-astro": "^0.14.0"
   },
   "peerDependenciesMeta": {
+    "@prettier/plugin-xml": {
+      "optional": true
+    },
     "@unocss/eslint-plugin": {
       "optional": true
     },
@@ -91,6 +95,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^0.5.2",
+    "@prettier/plugin-xml": "^3.4.1",
     "@types/eslint": "^9.6.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.2.0",

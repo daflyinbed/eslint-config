@@ -278,6 +278,7 @@ Enable flat config if you are using ESLint < 9.
     "yaml",
     "toml",
     "xml",
+    "svg",
     "gql",
     "graphql",
     "astro",
