@@ -13,6 +13,7 @@ import {
   GLOB_POSTCSS,
   GLOB_SCSS,
   GLOB_SRC,
+  GLOB_SVG,
   GLOB_VUE,
   GLOB_XML,
 } from "../globs";
@@ -32,6 +33,7 @@ export async function formatters(
     semi: true,
     endOfLine: "lf",
   };
+  const isPrettierPluginXmlInScope = isPackageExists("@prettier/plugin-xml");
   const defaultOptions = {
     astro: isPackageExists("prettier-plugin-astro"),
     css: true,
@@ -39,7 +41,8 @@ export async function formatters(
     html: true,
     markdown: true,
     slidev: isPackageExists("@slidev/cli"),
-    xml: isPackageExists("@prettier/plugin-xml"),
+    svg: isPrettierPluginXmlInScope,
+    xml: isPrettierPluginXmlInScope,
   };
   if (!options) {
     options = {
@@ -55,11 +58,11 @@ export async function formatters(
       ...options,
     };
   }
-
+  const needPluginXml = options.xml || options.svg;
   await ensurePackages([
     options.markdown && options.slidev ? "prettier-plugin-slidev" : undefined,
     options.astro ? "prettier-plugin-astro" : undefined,
-    options.xml ? "@prettier/plugin-xml" : undefined,
+    needPluginXml ? "@prettier/plugin-xml" : undefined,
   ]);
 
   if (
@@ -231,6 +234,27 @@ export async function formatters(
         parser: parserPlain,
       },
       name: "xwbx/formatter/xml",
+      rules: {
+        "format/prettier": [
+          "error",
+          {
+            ...prettierXmlOptions,
+            ...prettierOptions,
+            parser: "xml",
+            plugins: ["@prettier/plugin-xml"],
+          },
+        ],
+      },
+    });
+  }
+
+  if (options.svg) {
+    configs.push({
+      files: [GLOB_SVG],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: "xwbx/formatter/svg",
       rules: {
         "format/prettier": [
           "error",
