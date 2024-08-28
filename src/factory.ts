@@ -89,7 +89,6 @@ export function xwbx(
     autoRenamePlugins = true,
     componentExts = [],
     gitignore: enableGitignore = true,
-    isInEditor = isInEditorEnv(),
     jsx: enableJsx = true,
     // react: enableReact = false,
     regexp: enableRegexp = true,
@@ -99,6 +98,16 @@ export function xwbx(
     unocss: enableUnoCSS = UnocssPackages.some((i) => isPackageExists(i)),
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
   } = options;
+
+  let isInEditor = options.isInEditor;
+  if (isInEditor == null) {
+    isInEditor = isInEditorEnv();
+    if (isInEditor)
+      // eslint-disable-next-line no-console
+      console.log(
+        "[@xwbx/eslint-config] Detected running in editor, some rules are disabled.",
+      );
+  }
 
   const configs: Awaitable<TypedFlatConfigItem[]>[] = [];
 
