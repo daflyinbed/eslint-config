@@ -1,4 +1,3 @@
-import { isPackageExists } from "local-pkg";
 import {
   GLOB_ASTRO,
   GLOB_ASTRO_TS,
@@ -18,7 +17,7 @@ import {
   GLOB_XML,
 } from "../globs";
 import { pluginFormat, pluginStylistic } from "../plugins";
-import { ensurePackages, parserPlain } from "../utils";
+import { ensurePackages, isPackageInScope, parserPlain } from "../utils";
 import type { OptionsFormatters, TypedFlatConfigItem } from "../types";
 import type { Options as PrettierOptions } from "prettier";
 
@@ -33,14 +32,14 @@ export async function formatters(
     semi: true,
     endOfLine: "lf",
   };
-  const isPrettierPluginXmlInScope = isPackageExists("@prettier/plugin-xml");
+  const isPrettierPluginXmlInScope = isPackageInScope("@prettier/plugin-xml");
   const defaultOptions = {
-    astro: isPackageExists("prettier-plugin-astro"),
+    astro: isPackageInScope("prettier-plugin-astro"),
     css: true,
     graphql: true,
     html: true,
     markdown: true,
-    slidev: isPackageExists("@slidev/cli"),
+    slidev: isPackageInScope("@slidev/cli"),
     svg: isPrettierPluginXmlInScope,
     xml: isPrettierPluginXmlInScope,
   };
