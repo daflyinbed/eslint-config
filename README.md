@@ -13,6 +13,7 @@ and Prettier.
 - Ignores common files like `dist`, `node_modules`, `coverage`, and files in `.gitignore`.
 - Reasonable defaults, best practices, only one-line of config
 - Reasonable strict, but with better code quality.
+- Requires ESLint v9.5.0+
 
 ## Install
 
