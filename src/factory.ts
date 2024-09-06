@@ -36,17 +36,15 @@ import type {
 } from "./types";
 import type { Linter } from "eslint";
 
-const flatConfigProps: (keyof TypedFlatConfigItem)[] = [
+const flatConfigProps = [
   "name",
-  "files",
-  "ignores",
   "languageOptions",
   "linterOptions",
   "processor",
   "plugins",
   "rules",
   "settings",
-];
+] satisfies (keyof TypedFlatConfigItem)[];
 
 const VuePackages = ["vue", "nuxt", "vitepress", "@slidev/cli"];
 const UnocssPackages = ["unocss", "@unocss/webpack", "@unocss/nuxt"];
@@ -76,7 +74,7 @@ export const defaultPluginRenaming = {
  *  The merged ESLint configurations.
  */
 export function xwbx(
-  options: OptionsConfig & TypedFlatConfigItem = {},
+  options: OptionsConfig & Omit<TypedFlatConfigItem, "files"> = {},
   ...userConfigs: Awaitable<
     | TypedFlatConfigItem
     | TypedFlatConfigItem[]
@@ -132,7 +130,7 @@ export function xwbx(
 
   // Base configs
   configs.push(
-    ignores(),
+    ignores(options.ignores),
     javascript({
       isInEditor,
       overrides: getOverrides(options, "javascript"),
@@ -267,6 +265,12 @@ export function xwbx(
         componentExts,
         overrides: getOverrides(options, "markdown"),
       }),
+    );
+  }
+
+  if ("files" in options) {
+    throw new Error(
+      '[@xwbx/eslint-config] The first argument should not contain the "files" property as the options are supposed to be global. Place it in the second or later config instead.',
     );
   }
 
