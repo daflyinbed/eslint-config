@@ -1,5 +1,3 @@
-import { GLOB_SRC_EXT } from "../globs";
-
 import { pluginAntfu, pluginImport } from "../plugins";
 import type { TypedFlatConfigItem } from "../types";
 
@@ -25,14 +23,6 @@ export async function imports(): Promise<TypedFlatConfigItem[]> {
         "import/order": "off",
         // prettier don't do this for me (it reduce empty line count to 1 but don't inject new line)
         "import/newline-after-import": ["error", { count: 1 }],
-      },
-    },
-    {
-      files: ["**/bin/**/*", `**/bin.${GLOB_SRC_EXT}`],
-      name: "xwbx/imports/disables/bin",
-      rules: {
-        "antfu/no-import-dist": "off",
-        "antfu/no-import-node-modules-by-path": "off",
       },
     },
   ];

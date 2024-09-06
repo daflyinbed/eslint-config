@@ -133,7 +133,6 @@ export async function typescript(
           "@typescript-eslint": "ts",
         }),
         "no-dupe-class-members": "off",
-        "no-loss-of-precision": "off",
         "no-redeclare": "off",
         "no-use-before-define": "off",
         "no-useless-constructor": "off",
@@ -158,7 +157,6 @@ export async function typescript(
         "ts/no-extraneous-class": "off",
         "ts/no-import-type-side-effects": "error",
         "ts/no-invalid-void-type": "off",
-        "ts/no-loss-of-precision": "error",
         "ts/no-non-null-assertion": "off",
         "ts/no-redeclare": "error",
         "ts/no-require-imports": "error",
@@ -200,30 +198,5 @@ export async function typescript(
           },
         ]
       : []),
-    {
-      files: ["**/*.d.?([cm])ts"],
-      name: "xwbx/typescript/disables/dts",
-      rules: {
-        "eslint-comments/no-unlimited-disable": "off",
-        "import/no-duplicates": "off",
-        "no-restricted-syntax": "off",
-        "unused-imports/no-unused-vars": "off",
-      },
-    },
-    {
-      files: ["**/*.{test,spec}.ts?(x)"],
-      name: "xwbx/typescript/disables/test",
-      rules: {
-        "no-unused-expressions": "off",
-      },
-    },
-    {
-      files: ["**/*.js", "**/*.cjs"],
-      name: "xwbx/typescript/disables/cjs",
-      rules: {
-        "ts/no-require-imports": "off",
-        "ts/no-var-requires": "off",
-      },
-    },
   ];
 }

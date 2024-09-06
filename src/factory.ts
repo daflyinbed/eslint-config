@@ -5,6 +5,7 @@ import {
   astro,
   command,
   comments,
+  disables,
   formatters,
   ignores,
   imports,
@@ -267,6 +268,8 @@ export function xwbx(
       }),
     );
   }
+
+  configs.push(disables());
 
   if ("files" in options) {
     throw new Error(

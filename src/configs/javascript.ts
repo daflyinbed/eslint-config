@@ -1,7 +1,5 @@
 import globals from "globals";
 
-import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
-
 import { pluginUnusedImports } from "../plugins";
 import type {
   OptionsIsInEditor,
@@ -247,13 +245,6 @@ export async function javascript(
         "antfu/top-level-function": ["error"],
 
         ...overrides,
-      },
-    },
-    {
-      files: [`scripts/${GLOB_SRC}`, `cli.${GLOB_SRC_EXT}`],
-      name: "xwbx/javascript/disables/cli",
-      rules: {
-        "no-console": "off",
       },
     },
   ];
