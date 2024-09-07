@@ -13,6 +13,7 @@ import {
   GLOB_SCSS,
   GLOB_SRC,
   GLOB_SVG,
+  GLOB_TOML,
   GLOB_VUE,
   GLOB_XML,
 } from "../globs";
@@ -150,6 +151,26 @@ export async function formatters(
             parser: "json5",
           },
         ],
+      },
+    },
+    {
+      files: [GLOB_TOML],
+      name: "xwbx/formatter/toml",
+      rules: {
+        "toml/array-bracket-newline": "error",
+        "toml/array-bracket-spacing": "error",
+        "toml/array-element-newline": "error",
+        "toml/indent": [
+          "error",
+          prettierOptions.useTabs ? "tab" : prettierOptions.tabWidth,
+        ],
+        "toml/inline-table-curly-spacing": "error",
+        "toml/key-spacing": "error",
+        "toml/padding-line-between-pairs": "error",
+        "toml/padding-line-between-tables": "error",
+        "toml/quoted-keys": "error",
+        "toml/spaced-comment": "error",
+        "toml/table-bracket-spacing": "error",
       },
     },
   ];
