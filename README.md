@@ -21,7 +21,7 @@ and Prettier.
 npm i -D @xwbx/eslint-config
 ```
 
-Require Node.js >= 18.18, and ESLint >= 8.56.0.
+Require Node.js >= 18.18, and ESLint >= 9.5.0.
 
 ## Usage
 
@@ -265,7 +265,15 @@ Enable flat config if you are using ESLint < 9.
 
 ```jsonc
 {
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
   "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never",
+  },
   // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
