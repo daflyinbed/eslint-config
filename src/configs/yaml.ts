@@ -30,8 +30,6 @@ export async function yaml(
       rules: {
         "style/spaced-comment": "off",
 
-        "yaml/block-mapping": "error",
-        "yaml/block-sequence": "error",
         "yaml/no-empty-key": "error",
         "yaml/no-empty-sequence-entry": "error",
         "yaml/no-irregular-whitespace": "error",

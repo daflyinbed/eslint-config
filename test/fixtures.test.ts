@@ -17,17 +17,20 @@ runWithConfig("all", {
   vue: true,
   astro: true,
   formatters: true,
+  yaml: true,
 });
 runWithConfig("no-style", {
   typescript: true,
   vue: true,
   astro: true,
   formatters: false,
+  yaml: true,
 });
 runWithConfig("tab-single-quotes", {
   typescript: true,
   vue: true,
   astro: true,
+  yaml: true,
   formatters: {
     prettierOptions: {
       useTabs: true,

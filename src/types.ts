@@ -58,40 +58,40 @@ export interface OptionsFormatters {
    *
    * Currently only support Prettier.
    */
-  css?: "prettier" | boolean;
+  css?: boolean;
 
   /**
    * Enable formatting support for HTML.
    *
    * Currently only support Prettier.
    */
-  html?: "prettier" | boolean;
+  html?: boolean;
 
   /**
    * Enable formatting support for XML.
    *
    * Currently only support Prettier.
    */
-  xml?: "prettier" | boolean;
+  xml?: boolean;
 
   /**
    * Enable formatting support for SVG.
    *
    * Currently only support Prettier.
    */
-  svg?: "prettier" | boolean;
+  svg?: boolean;
 
   /**
    * Enable formatting support for Markdown.
    *
    * Currently only support Prettier.
    */
-  markdown?: "prettier" | boolean;
+  markdown?: boolean;
 
   /**
    * Enable formatting support for GraphQL.
    */
-  graphql?: "prettier" | boolean;
+  graphql?: boolean;
 
   /**
    * Custom options for Prettier.
@@ -117,6 +117,8 @@ export interface OptionsFormatters {
    * Currently only support Prettier.
    */
   astro?: "prettier" | boolean;
+
+  yaml?: boolean;
 }
 
 export interface OptionsComponentExts {

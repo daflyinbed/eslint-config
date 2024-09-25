@@ -16,6 +16,7 @@ import {
   GLOB_TOML,
   GLOB_VUE,
   GLOB_XML,
+  GLOB_YAML,
 } from "../globs";
 import { pluginFormat, pluginStylistic } from "../plugins";
 import { ensurePackages, isPackageInScope, parserPlain } from "../utils";
@@ -40,6 +41,7 @@ export async function formatters(
     graphql: true,
     html: true,
     markdown: true,
+    yaml: true,
     slidev: isPackageInScope("@slidev/cli"),
     svg: isPrettierPluginXmlInScope,
     xml: isPrettierPluginXmlInScope,
@@ -65,11 +67,7 @@ export async function formatters(
     needPluginXml ? "@prettier/plugin-xml" : undefined,
   ]);
 
-  if (
-    options.slidev &&
-    options.markdown !== true &&
-    options.markdown !== "prettier"
-  )
+  if (options.slidev && options.markdown !== true)
     throw new Error(
       "`slidev` option only works when `markdown` is enabled with `prettier`",
     );
@@ -385,6 +383,25 @@ export async function formatters(
           {
             ...prettierOptions,
             parser: "graphql",
+          },
+        ],
+      },
+    });
+  }
+
+  if (options.yaml) {
+    configs.push({
+      files: [GLOB_YAML],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: "xwbx/formatter/yaml",
+      rules: {
+        "format/prettier": [
+          "error",
+          {
+            ...prettierOptions,
+            parser: "yaml",
           },
         ],
       },
