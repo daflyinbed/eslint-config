@@ -15,6 +15,7 @@ import {
   jsx,
   markdown,
   node,
+  react,
   regexp,
   sortImport,
   sortPackageJson,
@@ -51,10 +52,10 @@ const VuePackages = ["vue", "nuxt", "vitepress", "@slidev/cli"];
 const UnocssPackages = ["unocss", "@unocss/webpack", "@unocss/nuxt"];
 
 export const defaultPluginRenaming = {
-  // '@eslint-react': 'react',
-  // '@eslint-react/dom': 'react-dom',
-  // '@eslint-react/hooks-extra': 'react-hooks-extra',
-  // '@eslint-react/naming-convention': 'react-naming-convention',
+  "@eslint-react": "react",
+  "@eslint-react/dom": "react-dom",
+  "@eslint-react/hooks-extra": "react-hooks-extra",
+  "@eslint-react/naming-convention": "react-naming-convention",
 
   "@stylistic": "style",
   "@typescript-eslint": "ts",
@@ -89,7 +90,7 @@ export function xwbx(
     componentExts = [],
     gitignore: enableGitignore = true,
     jsx: enableJsx = true,
-    // react: enableReact = false,
+    react: enableReact = false,
     regexp: enableRegexp = true,
     // solid: enableSolid = false,
     // svelte: enableSvelte = false,
@@ -127,7 +128,10 @@ export function xwbx(
   }
 
   const typescriptOptions = resolveSubOptions(options, "typescript");
-  // const tsconfigPath = 'tsconfigPath' in typescriptOptions ? typescriptOptions.tsconfigPath : undefined
+  const tsconfigPath =
+    "tsconfigPath" in typescriptOptions
+      ? typescriptOptions.tsconfigPath
+      : undefined;
 
   // Base configs
   configs.push(
@@ -194,12 +198,14 @@ export function xwbx(
     );
   }
 
-  // if (enableReact) {
-  //   configs.push(react({
-  //     overrides: getOverrides(options, 'react'),
-  //     tsconfigPath,
-  //   }))
-  // }
+  if (enableReact) {
+    configs.push(
+      react({
+        overrides: getOverrides(options, "react"),
+        tsconfigPath,
+      }),
+    );
+  }
 
   // if (enableSolid) {
   //   configs.push(solid({

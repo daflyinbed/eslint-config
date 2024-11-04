@@ -12,6 +12,7 @@ export * from "./jsonc";
 export * from "./jsx";
 export * from "./markdown";
 export * from "./node";
+export * from "./react";
 export * from "./regexp";
 export * from "./sort";
 export * from "./test";

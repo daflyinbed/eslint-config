@@ -6,6 +6,7 @@ export default xwbx({
   ignores: ["fixtures"],
   typescript: true,
   vue: true,
+  react: true,
   astro: true,
   unocss: true,
 });

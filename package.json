@@ -46,7 +46,6 @@
     "@eslint-react/eslint-plugin": {
       "optional": true
     },
-
     "@prettier/plugin-xml": {
       "optional": true
     },
