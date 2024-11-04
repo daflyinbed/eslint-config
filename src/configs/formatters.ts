@@ -23,6 +23,17 @@ import { ensurePackages, isPackageInScope, parserPlain } from "../utils";
 import type { OptionsFormatters, TypedFlatConfigItem } from "../types";
 import type { Options as PrettierOptions } from "prettier";
 
+function mergePrettierOptions(
+  options: PrettierOptions,
+  overrides: PrettierOptions = {},
+) {
+  return {
+    ...options,
+    ...overrides,
+    plugins: [...(overrides.plugins || []), ...(options.plugins || [])],
+  } as PrettierOptions & { parser?: string };
+}
+
 export async function formatters(
   options?: OptionsFormatters,
 ): Promise<TypedFlatConfigItem[]> {
@@ -100,7 +111,10 @@ export async function formatters(
           prettierOptions.singleQuote ? "single" : "double",
           { allowTemplateLiterals: false, avoidEscape: true },
         ],
-        "format/prettier": ["error", { ...prettierOptions, parser: undefined }],
+        "format/prettier": [
+          "error",
+          mergePrettierOptions(prettierOptions, { parser: undefined }),
+        ],
       },
     },
     {
@@ -112,10 +126,7 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
-            parser: "json",
-          },
+          mergePrettierOptions(prettierOptions, { parser: "json" }),
         ],
       },
     },
@@ -128,10 +139,7 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
-            parser: "jsonc",
-          },
+          mergePrettierOptions(prettierOptions, { parser: "jsonc" }),
         ],
       },
     },
@@ -144,10 +152,7 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
-            parser: "json5",
-          },
+          mergePrettierOptions(prettierOptions, { parser: "json5" }),
         ],
       },
     },
@@ -184,10 +189,7 @@ export async function formatters(
         rules: {
           "format/prettier": [
             "error",
-            {
-              ...prettierOptions,
-              parser: "css",
-            },
+            mergePrettierOptions(prettierOptions, { parser: "css" }),
           ],
         },
       },
@@ -200,10 +202,7 @@ export async function formatters(
         rules: {
           "format/prettier": [
             "error",
-            {
-              ...prettierOptions,
-              parser: "scss",
-            },
+            mergePrettierOptions(prettierOptions, { parser: "scss" }),
           ],
         },
       },
@@ -216,10 +215,7 @@ export async function formatters(
         rules: {
           "format/prettier": [
             "error",
-            {
-              ...prettierOptions,
-              parser: "less",
-            },
+            mergePrettierOptions(prettierOptions, { parser: "less" }),
           ],
         },
       },
@@ -236,10 +232,7 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
-            parser: "html",
-          },
+          mergePrettierOptions(prettierOptions, { parser: "html" }),
         ],
       },
     });
@@ -255,12 +248,10 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierXmlOptions,
-            ...prettierOptions,
-            parser: "xml",
-            plugins: ["@prettier/plugin-xml"],
-          },
+          mergePrettierOptions(
+            { ...prettierOptions, ...prettierXmlOptions },
+            { parser: "xml", plugins: ["@prettier/plugin-xml"] },
+          ),
         ],
       },
     });
@@ -276,12 +267,10 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierXmlOptions,
-            ...prettierOptions,
-            parser: "xml",
-            plugins: ["@prettier/plugin-xml"],
-          },
+          mergePrettierOptions(
+            { ...prettierOptions, ...prettierXmlOptions },
+            { parser: "xml", plugins: ["@prettier/plugin-xml"] },
+          ),
         ],
       },
     });
@@ -304,11 +293,10 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
+          mergePrettierOptions(prettierOptions, {
             embeddedLanguageFormatting: "off",
             parser: "markdown",
-          },
+          }),
         ],
       },
     });
@@ -323,12 +311,11 @@ export async function formatters(
         rules: {
           "format/prettier": [
             "error",
-            {
-              ...prettierOptions,
+            mergePrettierOptions(prettierOptions, {
               embeddedLanguageFormatting: "off",
               parser: "slidev",
               plugins: ["prettier-plugin-slidev"],
-            },
+            }),
           ],
         },
       });
@@ -346,11 +333,10 @@ export async function formatters(
         rules: {
           "format/prettier": [
             "error",
-            {
-              ...prettierOptions,
+            mergePrettierOptions(prettierOptions, {
               parser: "astro",
               plugins: ["prettier-plugin-astro"],
-            },
+            }),
           ],
         },
       },
@@ -380,10 +366,7 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
-            parser: "graphql",
-          },
+          mergePrettierOptions(prettierOptions, { parser: "graphql" }),
         ],
       },
     });
@@ -399,10 +382,7 @@ export async function formatters(
       rules: {
         "format/prettier": [
           "error",
-          {
-            ...prettierOptions,
-            parser: "yaml",
-          },
+          mergePrettierOptions(prettierOptions, { parser: "yaml" }),
         ],
       },
     });
