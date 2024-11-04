@@ -24,7 +24,6 @@ export async function vue(
   const sfcBlocks = options.sfcBlocks === true ? {} : (options.sfcBlocks ?? {});
 
   const [pluginVue, parserVue, processorVueBlocks] = await Promise.all([
-    // @ts-expect-error missing types
     interopDefault(import("eslint-plugin-vue")),
     interopDefault(import("vue-eslint-parser")),
     interopDefault(import("eslint-processor-vue-blocks")),
