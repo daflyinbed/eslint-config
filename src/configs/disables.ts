@@ -38,13 +38,6 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
       },
     },
     {
-      files: ["**/*.{test,spec}.([tj])s?(x)"],
-      name: "xwbx/disables/test",
-      rules: {
-        "no-unused-expressions": "off",
-      },
-    },
-    {
       files: ["**/*.js", "**/*.cjs"],
       name: "xwbx/disables/cjs",
       rules: {
