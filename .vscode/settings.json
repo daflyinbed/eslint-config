@@ -25,5 +25,6 @@
     "yaml",
     "toml",
     "xml"
-  ]
+  ],
+  "eslint.useFlatConfig": true
 }
