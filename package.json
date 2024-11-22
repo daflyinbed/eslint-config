@@ -1,7 +1,7 @@
 {
   "name": "@xwbx/eslint-config",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "packageManager": "pnpm@9.14.2",
   "description": "xwbx's ESLint config",
   "author": "xwbx <1677759063@qq.com> (https://github.com/daflyinbed/)",
