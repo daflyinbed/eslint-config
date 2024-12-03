@@ -22,7 +22,7 @@
     "stub": "tsup --format esm",
     "dev": "npx @eslint/config-inspector --host 0.0.0.0",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
-    "watch": "tsup --format esm,cjs --watch",
+    "watch": "tsup --format esm,cjs --watch --sourcemap",
     "lint": "eslint .",
     "test": "vitest",
     "typegen": "esno scripts/typegen.ts",
