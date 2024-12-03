@@ -99,12 +99,28 @@ export async function formatters(
       },
     },
     {
-      files: [GLOB_SRC, GLOB_VUE],
+      files: [GLOB_SRC],
+      ignores: [`${GLOB_ASTRO}/**`],
+      name: "xwbx/formatter/jslike",
+      rules: {
+        "style/quotes": [
+          "error",
+          prettierOptions.singleQuote ? "single" : "double",
+          { allowTemplateLiterals: false, avoidEscape: true },
+        ],
+        "format/prettier": [
+          "error",
+          mergePrettierOptions(prettierOptions, { parser: undefined }),
+        ],
+      },
+    },
+    {
+      files: [GLOB_VUE],
       languageOptions: {
         parser: parserPlain,
       },
       ignores: [`${GLOB_ASTRO}/**`],
-      name: "xwbx/formatter/jslike",
+      name: "xwbx/formatter/vue",
       rules: {
         "style/quotes": [
           "error",
@@ -132,9 +148,6 @@ export async function formatters(
     },
     {
       files: [GLOB_JSONC],
-      languageOptions: {
-        parser: parserPlain,
-      },
       name: "xwbx/formatter/jsonc",
       rules: {
         "format/prettier": [
@@ -145,9 +158,6 @@ export async function formatters(
     },
     {
       files: [GLOB_JSON5],
-      languageOptions: {
-        parser: parserPlain,
-      },
       name: "xwbx/formatter/json5",
       rules: {
         "format/prettier": [
@@ -375,9 +385,6 @@ export async function formatters(
   if (options.yaml) {
     configs.push({
       files: [GLOB_YAML],
-      languageOptions: {
-        parser: parserPlain,
-      },
       name: "xwbx/formatter/yaml",
       rules: {
         "format/prettier": [
