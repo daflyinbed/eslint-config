@@ -112,7 +112,7 @@
     "@types/eslint": "^9.6.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.9.1",
-    "@unocss/eslint-plugin": "^0.64.1",
+    "@unocss/eslint-plugin": "^65.4.0",
     "astro-eslint-parser": "^1.1.0",
     "bumpp": "^9.8.1",
     "eslint": "^9.15.0",
