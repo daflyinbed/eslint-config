@@ -264,7 +264,7 @@ export async function sortImport(): Promise<TypedFlatConfigItem[]> {
               "side-effect",
               "side-effect-style",
             ],
-            internalPattern: ["~/**", "@/**", "#**"],
+            internalPattern: ["^[~@#]/.*"],
             newlinesBetween: "ignore",
           },
         ],
