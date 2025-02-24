@@ -111,7 +111,7 @@
     "@prettier/plugin-xml": "^3.4.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.10.7",
-    "@unocss/eslint-plugin": "^65.4.2",
+    "@unocss/eslint-plugin": "^66.0.0",
     "astro-eslint-parser": "^1.1.0",
     "bumpp": "^9.10.1",
     "eslint": "^9.18.0",
