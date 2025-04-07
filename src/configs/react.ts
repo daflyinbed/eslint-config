@@ -212,7 +212,7 @@ export async function react(
           {
             files: filesTypeAware,
             ignores: ignoresTypeAware,
-            name: "antfu/react/type-aware-rules",
+            name: "xwbx/react/type-aware-rules",
             rules: {
               ...typeAwareRules,
             },
