@@ -198,7 +198,7 @@ Auto-fixing for the following rules are disabled when ESLint is running in a cod
 - [`unused-imports/no-unused-imports`](https://www.npmjs.com/package/eslint-plugin-unused-imports)
 - [`test/no-only-tests`](https://github.com/levibuzolic/eslint-plugin-no-only-tests)
 
-Since v0.4.0, they are no longer disabled, but made non-fixable using [this helper](https://github.com/xwbx/eslint-flat-config-utils#composerdisablerulesfix).
+Since v0.4.0, they are no longer disabled, but made non-fixable using [this helper](https://github.com/antfu/eslint-flat-config-utils#composerdisablerulesfix).
 
 This is to prevent unused imports from getting removed by the editor during refactoring to get a better developer experience. Those rules will be applied when you run ESLint in the terminal or [Lint Staged](#lint-staged). If you don't want this behavior, you can disable them:
 
