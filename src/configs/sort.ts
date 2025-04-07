@@ -151,6 +151,7 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               "useDefineForClassFields",
               "emitDecoratorMetadata",
               "experimentalDecorators",
+              "libReplacement",
               /* Modules */
               "baseUrl",
               "rootDir",
@@ -225,6 +226,7 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               "isolatedModules",
               "preserveSymlinks",
               "verbatimModuleSyntax",
+              "erasableSyntaxOnly",
               /* Completeness */
               "skipDefaultLibCheck",
               "skipLibCheck",
