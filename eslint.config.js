@@ -5,7 +5,9 @@ import { xwbx } from "./dist/index.js";
 export default xwbx({
   ignores: ["fixtures"],
   typescript: true,
-  vue: true,
+  vue: {
+    a11y: true,
+  },
   react: true,
   astro: true,
   unocss: true,

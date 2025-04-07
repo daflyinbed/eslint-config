@@ -15,6 +15,7 @@ import {
   jsx,
   markdown,
   node,
+  pnpm,
   react,
   regexp,
   sortImport,
@@ -90,6 +91,7 @@ export function xwbx(
     componentExts = [],
     gitignore: enableGitignore = true,
     jsx: enableJsx = true,
+    pnpm: enableCatalogs = false,
     react: enableReact = false,
     regexp: enableRegexp = true,
     // solid: enableSolid = false,
@@ -251,6 +253,10 @@ export function xwbx(
     );
   }
 
+  if (enableCatalogs) {
+    configs.push(pnpm());
+  }
+
   if (options.yaml ?? true) {
     configs.push(
       yaml({
@@ -325,7 +331,9 @@ export function resolveSubOptions<K extends keyof OptionsConfig>(
   options: OptionsConfig,
   key: K,
 ): ResolvedOptions<OptionsConfig[K]> {
-  return typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
+  return typeof options[key] === "boolean"
+    ? ({} as any)
+    : options[key] || ({} as any);
 }
 
 export function getOverrides<K extends keyof OptionsConfig>(
