@@ -40,5 +40,18 @@ export async function yaml(
         ...overrides,
       },
     },
+    {
+      files: ["pnpm-workspace.yaml"],
+      name: "xwbx/yaml/pnpm-workspace",
+      rules: {
+        "yaml/sort-keys": [
+          "error",
+          {
+            order: ["packages", "catalog", "catalogs"],
+            pathPattern: "^$",
+          },
+        ],
+      },
+    },
   ];
 }
