@@ -41,6 +41,7 @@ export async function sortPackageJson(): Promise<TypedFlatConfigItem[]> {
               "keywords",
               "categories",
               "sideEffects",
+              "imports",
               "exports",
               "main",
               "module",
