@@ -367,7 +367,7 @@ export interface OptionsConfig
    *
    * @default false
    */
-  svelte?: boolean;
+  // svelte?: boolean;
 
   /**
    * Enable unocss rules.
