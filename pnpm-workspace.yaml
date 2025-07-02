@@ -36,7 +36,7 @@ catalogs:
     "@clack/prompts": ^0.10.1
     "@eslint-community/eslint-plugin-eslint-comments": ^4.5.0
     "@eslint/markdown": ^6.4.0
-    "@stylistic/eslint-plugin": ^4.2.0
+    "@stylistic/eslint-plugin": ^5.1.0
     "@typescript-eslint/eslint-plugin": ^8.32.1
     "@typescript-eslint/parser": ^8.32.1
     "@vitest/eslint-plugin": ^1.2.0
