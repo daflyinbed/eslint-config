@@ -60,7 +60,7 @@ export const defaultPluginRenaming = {
 
   "@stylistic": "style",
   "@typescript-eslint": "ts",
-  "import-x": "import",
+  "import-lite": "import",
   n: "node",
   vitest: "test",
   yml: "yaml",
@@ -90,6 +90,7 @@ export function xwbx(
     autoRenamePlugins = true,
     componentExts = [],
     gitignore: enableGitignore = true,
+    imports: enableImports = true,
     jsx: enableJsx = true,
     pnpm: enableCatalogs = false,
     react: enableReact = false,
@@ -97,6 +98,7 @@ export function xwbx(
     // solid: enableSolid = false,
     // svelte: enableSvelte = false,
     typescript: enableTypeScript = isPackageExists("typescript"),
+    unicorn: enableUnicorn = true,
     unocss: enableUnoCSS = UnocssPackages.some((i) => isPackageExists(i)),
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
   } = options;
@@ -145,8 +147,6 @@ export function xwbx(
     comments(),
     node(),
     jsdoc(),
-    imports(),
-    unicorn(),
     command(),
 
     sortImport(),
@@ -158,6 +158,14 @@ export function xwbx(
       ),
     );
   }
+  if (enableImports) {
+    configs.push(imports(enableImports === true ? {} : enableImports));
+  }
+
+  if (enableUnicorn) {
+    configs.push(unicorn(enableUnicorn === true ? {} : enableUnicorn));
+  }
+
   if (enableVue) {
     componentExts.push("vue");
   }

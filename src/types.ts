@@ -266,6 +266,19 @@ export interface OptionsConfig
   jsx?: boolean;
 
   /**
+   * Options for eslint-plugin-unicorn.
+   *
+   * @default true
+   */
+  unicorn?: boolean | OptionsUnicorn;
+
+  /**
+   * Options for eslint-plugin-import-lite.
+   *
+   * @default true
+   */
+  imports?: boolean | OptionsOverrides;
+  /**
    * Enable test support.
    *
    * @default true
