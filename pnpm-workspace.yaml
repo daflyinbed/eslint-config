@@ -2,7 +2,6 @@ packages:
   - "fixtures/*"
 catalogs:
   dev:
-    "@antfu/ni": ^25.0.0
     "@eslint/config-inspector": ^1.1.0
     "@types/node": ^22.16.0
     bumpp: ^10.2.0
