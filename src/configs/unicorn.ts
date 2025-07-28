@@ -14,7 +14,7 @@ export async function unicorn(
       },
       rules: {
         ...(allRecommended
-          ? pluginUnicorn.configs.recommended.rules
+          ? (pluginUnicorn.configs.recommended.rules as any)
           : {
               "unicorn/catch-error-name": "error",
               "unicorn/consistent-empty-array-spread": "error",

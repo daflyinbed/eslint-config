@@ -13,7 +13,7 @@ export type { ConfigNames };
 
 export type TypedFlatConfigItem = Omit<
   Linter.Config<Linter.RulesRecord & Rules>,
-  "plugins"
+  "plugins" | "rules"
 > & {
   // Relax plugins type limitation, as most of the plugins did not have correct type info yet.
   /**
@@ -22,6 +22,11 @@ export type TypedFlatConfigItem = Omit<
    * @see [Using plugins in your configuration](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#using-plugins-in-your-configuration)
    */
   plugins?: Record<string, any>;
+
+  /**
+   * Rules configuration. More flexible to allow plugin rules that may not be perfectly typed.
+   */
+  rules?: Record<string, Linter.RuleEntry<any> | undefined>;
 };
 
 export interface OptionsFiles {
