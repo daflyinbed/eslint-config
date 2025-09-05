@@ -2,7 +2,7 @@
   "name": "@xwbx/eslint-config",
   "type": "module",
   "version": "0.8.0",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.15.1",
   "description": "xwbx's ESLint config",
   "author": "xwbx <1677759063@qq.com> (https://github.com/daflyinbed/)",
   "license": "MIT",
