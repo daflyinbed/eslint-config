@@ -171,7 +171,7 @@ export function xwbx(
   }
 
   if (enableJsx) {
-    configs.push(jsx());
+    configs.push(jsx(enableJsx === true ? {} : enableJsx));
   }
 
   if (enableTypeScript) {

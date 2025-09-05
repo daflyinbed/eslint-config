@@ -11,4 +11,7 @@ export default xwbx({
   react: true,
   astro: true,
   unocss: true,
+  jsx: {
+    a11y: true,
+  },
 });
