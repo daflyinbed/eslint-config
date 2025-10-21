@@ -124,6 +124,7 @@
     "bumpp": "catalog:dev",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
+    "eslint-plugin-erasable-syntax-only": "catalog:peer",
     "eslint-plugin-jsx-a11y": "catalog:peer",
     "eslint-plugin-react-hooks": "catalog:peer",
     "eslint-plugin-react-refresh": "catalog:peer",
