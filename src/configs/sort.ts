@@ -1,4 +1,4 @@
-import { pluginPerfectionist } from "src/plugins";
+import { pluginPerfectionist } from "../plugins";
 import type { TypedFlatConfigItem } from "../types";
 
 /**
