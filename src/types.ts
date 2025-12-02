@@ -283,6 +283,16 @@ export interface OptionsConfig
   gitignore?: boolean | FlatGitignoreOptions;
 
   /**
+   * Extend the global ignores.
+   *
+   * Passing an array to extends the ignores.
+   * Passing a function to modify the default ignores.
+   *
+   * @default []
+   */
+  ignores?: string[] | ((originals: string[]) => string[]);
+
+  /**
    * Core rules. Can't be disabled.
    */
   javascript?: OptionsOverrides;

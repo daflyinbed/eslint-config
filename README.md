@@ -38,7 +38,11 @@ export default xwbx(
     jsonc: false,
     yaml: false,
     toml: false,
+
     // `.eslintignore` is no longer supported in Flat config, use `ignores` instead
+    // The `ignores` option in the option (first argument) is specifically treated to always be global ignores
+    // And will **extend** the config's default ignores, not override them
+    // You can also pass a function to modify the default ignores
     ignores: [
       "**/fixtures",
       // ...globs
