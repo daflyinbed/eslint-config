@@ -270,8 +270,7 @@ export interface OptionsUnoCSS extends OptionsOverrides {
 }
 
 export interface OptionsConfig
-  extends OptionsComponentExts,
-    OptionsProjectType {
+  extends OptionsComponentExts, OptionsProjectType {
   /**
    * Enable gitignore support.
    *
