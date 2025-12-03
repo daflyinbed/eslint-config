@@ -263,7 +263,7 @@ export function xwbx(
   }
 
   if (enableCatalogs) {
-    configs.push(pnpm());
+    configs.push(pnpm({ isInEditor }));
   }
 
   if (options.yaml ?? true) {

@@ -1,8 +1,10 @@
 import { interopDefault } from "../utils";
 
-import type { TypedFlatConfigItem } from "../types";
+import type { OptionsIsInEditor, TypedFlatConfigItem } from "../types";
 
-export async function pnpm(): Promise<TypedFlatConfigItem[]> {
+export async function pnpm(
+  options: OptionsIsInEditor,
+): Promise<TypedFlatConfigItem[]> {
   const [pluginPnpm, yamlParser, jsoncParser] = await Promise.all([
     interopDefault(import("eslint-plugin-pnpm")),
     interopDefault(import("yaml-eslint-parser")),
@@ -20,9 +22,15 @@ export async function pnpm(): Promise<TypedFlatConfigItem[]> {
         pnpm: pluginPnpm,
       },
       rules: {
-        "pnpm/json-enforce-catalog": "error",
-        "pnpm/json-prefer-workspace-settings": "error",
-        "pnpm/json-valid-catalog": "error",
+        "pnpm/json-enforce-catalog": [
+          "error",
+          { autofix: !options.isInEditor },
+        ],
+        "pnpm/json-prefer-workspace-settings": [
+          "error",
+          { autofix: !options.isInEditor },
+        ],
+        "pnpm/json-valid-catalog": ["error", { autofix: !options.isInEditor }],
       },
     },
     {
