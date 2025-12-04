@@ -1,5 +1,5 @@
 import { FlatConfigComposer } from "eslint-flat-config-utils";
-
+import { findUpSync } from "find-up-simple";
 import { isPackageExists } from "local-pkg";
 import {
   astro,
@@ -93,7 +93,7 @@ export function xwbx(
     ignores: userIgnores = [],
     imports: enableImports = true,
     jsx: enableJsx = true,
-    pnpm: enableCatalogs = false,
+    pnpm: enableCatalogs = !!findUpSync("pnpm-workspace.yaml"),
     react: enableReact = false,
     regexp: enableRegexp = true,
     // solid: enableSolid = false,

@@ -45,6 +45,10 @@ catalogs:
     vitest:
       specifier: ^4.0.14
       version: 4.0.14
+  inline:
+    find-up-simple:
+      specifier: ^1.0.1
+      version: 1.0.1
   peer:
     '@eslint-react/eslint-plugin':
       specifier: ^2.3.10
@@ -353,6 +357,9 @@ importers:
       execa:
         specifier: catalog:dev
         version: 9.6.1
+      find-up-simple:
+        specifier: catalog:inline
+        version: 1.0.1
       husky:
         specifier: catalog:dev
         version: 9.1.7
