@@ -1,4 +1,7 @@
+catalogMode: prefer
+cleanupUnusedCatalogs: true
 shellEmulator: true
+
 packages:
   - fixtures/*
 
@@ -11,9 +14,7 @@ catalogs:
     eslint-typegen: ^2.3.0
     execa: ^9.6.1
     husky: ^9.1.7
-    jiti: ^2.6.1
     lint-staged: ^16.2.7
-    pnpm-workspace-yaml: ^1.3.0
     tinyglobby: ^0.2.15
     tsup: ^8.5.1
     tsx: ^4.21.0
@@ -30,11 +31,7 @@ catalogs:
     eslint-plugin-jsx-a11y: ^6.10.2
     eslint-plugin-react-hooks: ^7.0.1
     eslint-plugin-react-refresh: ^0.4.24
-    eslint-plugin-solid: ^0.14.5
-    eslint-plugin-vuejs-accessibility: ^2.4.1
     prettier-plugin-astro: ^0.14.1
-    prettier-plugin-slidev: ^1.0.5
-    vue: ^3.5.22
   prod:
     "@antfu/install-pkg": ^1.1.0
     "@clack/prompts": ^0.11.0
@@ -56,7 +53,7 @@ catalogs:
     eslint-plugin-n: ^17.23.1
     eslint-plugin-no-only-tests: ^3.3.0
     eslint-plugin-perfectionist: ^4.15.1
-    eslint-plugin-pnpm: ^1.3.0
+    eslint-plugin-pnpm: ^1.4.0
     eslint-plugin-regexp: ^2.10.0
     eslint-plugin-toml: ^0.12.0
     eslint-plugin-unicorn: ^62.0.0
@@ -72,7 +69,6 @@ catalogs:
     toml-eslint-parser: ^0.10.0
     vue-eslint-parser: ^10.2.0
     yaml-eslint-parser: ^1.3.1
-
 onlyBuiltDependencies:
   - esbuild
   - unrs-resolver
