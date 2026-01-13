@@ -77,7 +77,7 @@ export const defaultPluginRenaming = {
  *  The merged ESLint configurations.
  */
 export function xwbx(
-  options: OptionsConfig & Omit<TypedFlatConfigItem, "files"> = {},
+  options: OptionsConfig & Omit<TypedFlatConfigItem, "files" | "ignores"> = {},
   ...userConfigs: Awaitable<
     | TypedFlatConfigItem
     | TypedFlatConfigItem[]
