@@ -98,7 +98,7 @@ export async function pnpm(
                 "preferWorkspacePackages",
                 "publicHoistPattern",
                 "registrySupportsTimeField",
-                "requiredScrpts",
+                "requiredScripts",
                 "resolutionMode",
                 "savePrefix",
                 "scriptShell",
