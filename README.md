@@ -368,3 +368,12 @@ This setup is heavily inspired on a few projects:
 
 - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 - [@sxzz/eslint-config](https://github.com/sxzz/eslint-config)
+
+## Upstream Comparison
+
+This project is based on [@antfu/eslint-config](https://github.com/antfu/eslint-config). For detailed information about differences and how to sync with upstream:
+
+- [📋 Quick Summary](./SUMMARY.md) - Quick reference of key differences
+- [📊 Detailed Comparison](./UPSTREAM_COMPARISON.md) - Comprehensive feature and version comparison
+- [🔧 Technical Diff](./TECHNICAL_DIFF.md) - In-depth technical differences
+- [🔄 Sync Guide](./SYNC_GUIDE.md) - Step-by-step guide for syncing with upstream
