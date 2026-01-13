@@ -269,6 +269,10 @@ export interface OptionsUnoCSS extends OptionsOverrides {
   strict?: boolean;
 }
 
+export interface OptionsReact extends OptionsOverrides {
+  reactCompiler?: boolean;
+}
+
 export interface OptionsConfig
   extends OptionsComponentExts, OptionsProjectType {
   /**
@@ -410,7 +414,7 @@ export interface OptionsConfig
    *
    * @default false
    */
-  react?: boolean | OptionsOverrides;
+  react?: boolean | OptionsReact;
   /**
    * Enable solid rules.
    *

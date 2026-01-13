@@ -213,6 +213,7 @@ export function xwbx(
     configs.push(
       react({
         ...typescriptOptions,
+        ...resolveSubOptions(options, "react"),
         overrides: getOverrides(options, "react"),
         tsconfigPath,
       }),
