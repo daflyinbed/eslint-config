@@ -145,7 +145,7 @@ catalogs:
       specifier: ^4.15.1
       version: 4.15.1
     eslint-plugin-pnpm:
-      specifier: ^1.4.0
+      specifier: ^1.4.1
       version: 1.4.3
     eslint-plugin-regexp:
       specifier: ^2.10.0
