@@ -171,6 +171,10 @@ git log upstream/main --grep="security\|vulnerability" --since="3 months ago"
 
 ## 🔗 资源链接
 
+### 文档
+- [AI 合并提示词](./AI_MERGE_PROMPT.md) - 用于 AI 工具从上游合并代码的完整指南
+
+### 仓库
 - 上游仓库: https://github.com/antfu/eslint-config
 - 上游文档: https://github.com/antfu/eslint-config#readme
 - 本仓库: https://github.com/daflyinbed/eslint-config

@@ -377,3 +377,4 @@ This project is based on [@antfu/eslint-config](https://github.com/antfu/eslint-
 - [📊 Detailed Comparison](./UPSTREAM_COMPARISON.md) - Comprehensive feature and version comparison
 - [🔧 Technical Diff](./TECHNICAL_DIFF.md) - In-depth technical differences
 - [🔄 Sync Guide](./SYNC_GUIDE.md) - Step-by-step guide for syncing with upstream
+- [🤖 AI Merge Prompt](./AI_MERGE_PROMPT.md) - Prompt for AI tools to help merge upstream code
