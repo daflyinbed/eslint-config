@@ -49,7 +49,6 @@ export async function pnpm(
           {
             settings: {
               catalogMode: "prefer",
-              cleanupUnusedCatalogs: true,
               shellEmulator: true,
               trustPolicy: "no-downgrade",
             },
