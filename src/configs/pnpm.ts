@@ -73,9 +73,9 @@ export async function pnpm(
           "error",
           {
             settings: {
-              catalogMode: "prefer",
               shellEmulator: true,
               trustPolicy: "no-downgrade",
+              ...(catalogs ? { catalogMode: "prefer" } : {}),
             },
           },
         ],
