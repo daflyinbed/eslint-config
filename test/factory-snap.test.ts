@@ -1,4 +1,4 @@
-import { expect, it } from "vitest";
+import { it } from "vitest";
 import {
   CONFIG_PRESET_FULL_OFF,
   CONFIG_PRESET_FULL_ON,
@@ -79,8 +79,10 @@ function serializeConfigs(configs: TypedFlatConfigItem[]) {
           "unknown";
       }
       delete clone.languageOptions.globals;
-      if ((c.languageOptions.parserOptions as any)?.parser) {
+      if (c.languageOptions.parserOptions) {
         delete clone.languageOptions.parserOptions.parser;
+        delete clone.languageOptions.parserOptions.projectService;
+        delete clone.languageOptions.parserOptions.tsconfigRootDir;
       }
     }
     if (c.processor && typeof c.processor !== "string") {
@@ -97,7 +99,7 @@ function serializeConfigs(configs: TypedFlatConfigItem[]) {
 }
 
 for (const { name, configs } of suites) {
-  it(`factory ${name}`, async () => {
+  it.concurrent(`factory ${name}`, async ({ expect }) => {
     const config = await xwbx(configs);
     await expect(serializeConfigs(config)).toMatchFileSnapshot(
       `./__snapshots__/factory/${name}.ts`,
