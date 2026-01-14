@@ -1,5 +1,4 @@
 import { GLOB_YAML } from "../globs";
-
 import { interopDefault } from "../utils";
 import type {
   OptionsFiles,

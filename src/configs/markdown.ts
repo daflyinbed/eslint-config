@@ -5,7 +5,6 @@ import {
   GLOB_MARKDOWN_CODE,
   GLOB_MARKDOWN_IN_MARKDOWN,
 } from "../globs";
-
 import { interopDefault, parserPlain } from "../utils";
 import type {
   OptionsComponentExts,
