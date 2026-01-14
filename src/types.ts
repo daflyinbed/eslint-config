@@ -259,6 +259,8 @@ export interface OptionsIsInEditor {
 export interface OptionsPnpm extends OptionsIsInEditor {
   /**
    * Requires catalogs usage
+   *
+   * Detects automatically based if `catalogs` is used in the pnpm-workspace.yaml file
    */
   catalogs?: boolean;
 
@@ -329,11 +331,25 @@ export interface OptionsConfig
   javascript?: OptionsOverrides;
 
   /**
+   * Enable Node.js rules
+   *
+   * @default true
+   */
+  node?: boolean;
+
+  /**
+   * Enable JSDoc rules
+   *
+   * @default true
+   */
+  jsdoc?: boolean;
+
+  /**
    * Enable TypeScript support.
    *
    * Passing an object to enable TypeScript Language Server support.
    *
-   * @default auto-detect based on the dependencies
+   * @default auto-detect based on dependencies
    */
   typescript?: boolean | OptionsTypescript;
 

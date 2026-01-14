@@ -132,6 +132,26 @@
     ],
   },
   {
+    "name": "xwbx/command/rules",
+    "plugins": [
+      "command",
+    ],
+    "rules": [
+      "command/command",
+    ],
+  },
+  {
+    "name": "xwbx/sort/import",
+    "plugins": [
+      "perfectionist",
+    ],
+    "rules": [
+      "perfectionist/sort-imports",
+      "perfectionist/sort-named-exports",
+      "perfectionist/sort-named-imports",
+    ],
+  },
+  {
     "name": "xwbx/node",
     "plugins": [
       "node",
@@ -169,26 +189,6 @@
       "jsdoc/require-returns-check",
       "jsdoc/require-returns-description",
       "jsdoc/require-yields-check",
-    ],
-  },
-  {
-    "name": "xwbx/command/rules",
-    "plugins": [
-      "command",
-    ],
-    "rules": [
-      "command/command",
-    ],
-  },
-  {
-    "name": "xwbx/sort/import",
-    "plugins": [
-      "perfectionist",
-    ],
-    "rules": [
-      "perfectionist/sort-imports",
-      "perfectionist/sort-named-exports",
-      "perfectionist/sort-named-imports",
     ],
   },
   {

@@ -92,7 +92,9 @@ export function xwbx(
     gitignore: enableGitignore = true,
     ignores: userIgnores = [],
     imports: enableImports = true,
+    jsdoc: enableJsdoc = true,
     jsx: enableJsx = true,
+    node: enableNode = true,
     pnpm: enableCatalogs = !!findUpSync("pnpm-workspace.yaml"),
     react: enableReact = false,
     regexp: enableRegexp = true,
@@ -152,12 +154,17 @@ export function xwbx(
       overrides: getOverrides(options, "javascript"),
     }),
     comments(),
-    node(),
-    jsdoc(),
     command(),
-
     sortImport(),
   );
+
+  if (enableNode) {
+    configs.push(node());
+  }
+
+  if (enableJsdoc) {
+    configs.push(jsdoc());
+  }
   if (options.formatters ?? true) {
     configs.push(
       formatters(
@@ -166,7 +173,11 @@ export function xwbx(
     );
   }
   if (enableImports) {
-    configs.push(imports(enableImports === true ? {} : enableImports));
+    configs.push(
+      imports({
+        ...resolveSubOptions(options, "imports"),
+      }),
+    );
   }
 
   if (enableUnicorn) {

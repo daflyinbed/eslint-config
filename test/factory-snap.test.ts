@@ -1,4 +1,8 @@
 import { expect, it } from "vitest";
+import {
+  CONFIG_PRESET_FULL_OFF,
+  CONFIG_PRESET_FULL_ON,
+} from "../src/config-presets";
 import { xwbx } from "../src/factory";
 import type { OptionsConfig, TypedFlatConfigItem } from "src/types";
 
@@ -7,25 +11,6 @@ interface Suite {
   configs: OptionsConfig;
 }
 
-const FULL_OFF: OptionsConfig = {
-  gitignore: false,
-  typescript: false,
-  yaml: false,
-  jsonc: false,
-  pnpm: false,
-  react: false,
-  solid: false,
-  toml: false,
-  vue: false,
-  test: false,
-  unocss: false,
-  imports: false,
-  isInEditor: false,
-  markdown: false,
-  regexp: false,
-  unicorn: false,
-};
-
 const suites: Suite[] = [
   {
     name: "default",
@@ -33,7 +18,11 @@ const suites: Suite[] = [
   },
   {
     name: "full-off",
-    configs: FULL_OFF,
+    configs: CONFIG_PRESET_FULL_OFF,
+  },
+  {
+    name: "full-on",
+    configs: CONFIG_PRESET_FULL_ON,
   },
   {
     name: "javascript-vue",
