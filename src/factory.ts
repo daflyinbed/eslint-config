@@ -120,13 +120,19 @@ export function xwbx(
     if (typeof enableGitignore !== "boolean") {
       configs.push(
         interopDefault(import("eslint-config-flat-gitignore")).then((r) => [
-          r(enableGitignore),
+          r({
+            name: "xwbx/gitignore",
+            ...enableGitignore,
+          }),
         ]),
       );
     } else {
       configs.push(
         interopDefault(import("eslint-config-flat-gitignore")).then((r) => [
-          r({ strict: false }),
+          r({
+            name: "xwbx/gitignore",
+            strict: false,
+          }),
         ]),
       );
     }
@@ -264,7 +270,15 @@ export function xwbx(
   }
 
   if (enableCatalogs) {
-    configs.push(pnpm({ isInEditor }));
+    const optionsPnpm = resolveSubOptions(options, "pnpm");
+    configs.push(
+      pnpm({
+        isInEditor,
+        json: options.jsonc !== false,
+        yaml: options.yaml !== false,
+        ...optionsPnpm,
+      }),
+    );
   }
 
   if (options.yaml ?? true) {

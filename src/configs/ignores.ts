@@ -16,7 +16,7 @@ export async function ignores(
   return [
     {
       ignores,
-      name: "antfu/ignores",
+      name: "xwbx/ignores",
     },
   ];
 }
