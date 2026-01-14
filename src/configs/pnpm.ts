@@ -23,7 +23,7 @@ export async function pnpm(
     interopDefault(import("eslint-plugin-yml")),
   ]);
 
-  const { catalogs = detectCatalogUsage(), isInEditor = false } = options;
+  const { catalogs = await detectCatalogUsage(), isInEditor = false } = options;
 
   return [
     {
