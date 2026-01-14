@@ -80,7 +80,7 @@ export async function pnpm(
           {
             settings: {
               shellEmulator: true,
-              trustPolicy: "no-downgrade",
+              // trustPolicy: "no-downgrade",
             },
           },
         ],
