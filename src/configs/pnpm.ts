@@ -46,7 +46,13 @@ export async function pnpm(
       rules: {
         ...(catalogs
           ? {
-              "pnpm/json-enforce-catalog": ["error", { autofix: !isInEditor }],
+              "pnpm/json-enforce-catalog": [
+                "error",
+                {
+                  autofix: !isInEditor,
+                  ignores: ["@types/vscode"],
+                },
+              ],
             }
           : {}),
         "pnpm/json-prefer-workspace-settings": [
