@@ -895,7 +895,7 @@
     ],
     "name": "xwbx/markdown/rules",
     "rules": [
-      "markdown/fenced-code-language",
+      "- markdown/fenced-code-language",
       "markdown/heading-increment",
       "markdown/no-duplicate-definitions",
       "markdown/no-empty-definitions",
