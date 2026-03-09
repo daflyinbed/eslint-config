@@ -6,11 +6,14 @@ import type { TypedFlatConfigItem } from "../types";
 export async function node(): Promise<TypedFlatConfigItem[]> {
   return [
     {
-      files: [GLOB_SRC],
-      name: "xwbx/node",
+      name: "xwbx/node/setup",
       plugins: {
         node: pluginNode,
       },
+    },
+    {
+      files: [GLOB_SRC],
+      name: "xwbx/node/rules",
       rules: {
         "node/handle-callback-err": ["error", "^(err|error)$"],
         "node/no-deprecated-api": "error",

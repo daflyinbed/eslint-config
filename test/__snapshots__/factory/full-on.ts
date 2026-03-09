@@ -152,13 +152,16 @@
     ],
   },
   {
-    "files": [
-      "**/*.?([cm])[jt]s?(x)",
-    ],
-    "name": "xwbx/node",
+    "name": "xwbx/node/setup",
     "plugins": [
       "node",
     ],
+  },
+  {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
+    "name": "xwbx/node/rules",
     "rules": [
       "node/handle-callback-err",
       "node/no-deprecated-api",
