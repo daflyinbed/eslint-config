@@ -152,6 +152,9 @@
     ],
   },
   {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
     "name": "xwbx/node",
     "plugins": [
       "node",
@@ -169,6 +172,9 @@
     ],
   },
   {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
     "name": "xwbx/jsdoc",
     "plugins": [
       "jsdoc",

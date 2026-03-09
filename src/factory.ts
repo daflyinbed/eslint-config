@@ -2,6 +2,7 @@ import { FlatConfigComposer } from "eslint-flat-config-utils";
 import { findUpSync } from "find-up-simple";
 import { isPackageExists } from "local-pkg";
 import {
+  angular,
   astro,
   command,
   comments,
@@ -86,6 +87,7 @@ export function xwbx(
   >[]
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const {
+    angular: enableAngular = false,
     astro: enableAstro = isPackageExists("astro"),
     autoRenamePlugins = true,
     componentExts = [],
@@ -233,6 +235,14 @@ export function xwbx(
         ...resolveSubOptions(options, "react"),
         overrides: getOverrides(options, "react"),
         tsconfigPath,
+      }),
+    );
+  }
+
+  if (enableAngular) {
+    configs.push(
+      angular({
+        overrides: getOverrides(options, "angular"),
       }),
     );
   }

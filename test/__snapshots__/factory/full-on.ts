@@ -152,6 +152,9 @@
     ],
   },
   {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
     "name": "xwbx/node",
     "plugins": [
       "node",
@@ -169,6 +172,9 @@
     ],
   },
   {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
     "name": "xwbx/jsdoc",
     "plugins": [
       "jsdoc",
@@ -1136,6 +1142,52 @@
     "rules": [
       "react/no-leaked-conditional-rendering",
       "react/no-implicit-key",
+    ],
+  },
+  {
+    "name": "xwbx/angular/setup",
+    "plugins": [
+      "angular",
+      "angular-template",
+    ],
+  },
+  {
+    "files": [
+      "**/*.?([cm])ts",
+    ],
+    "name": "xwbx/angular/rules/ts",
+    "processor": "extract-inline-html",
+    "rules": [
+      "angular/contextual-lifecycle",
+      "angular/no-empty-lifecycle-method",
+      "angular/no-input-rename",
+      "angular/no-inputs-metadata-property",
+      "angular/no-output-native",
+      "angular/no-output-on-prefix",
+      "angular/no-output-rename",
+      "angular/no-outputs-metadata-property",
+      "angular/prefer-inject",
+      "angular/prefer-standalone",
+      "angular/use-lifecycle-interface",
+      "angular/use-pipe-transform-interface",
+    ],
+  },
+  {
+    "files": [
+      "**/*.htm?(l)",
+    ],
+    "languageOptions": {
+      "parser": "angular-eslint/template-parser",
+    },
+    "name": "xwbx/angular/rules/template",
+    "rules": [
+      "angular-template/banana-in-box",
+      "angular-template/eqeqeq",
+      "angular-template/no-negated-async",
+      "angular-template/prefer-control-flow",
+      "- style/indent",
+      "style/no-multiple-empty-lines",
+      "- style/no-trailing-spaces",
     ],
   },
   {

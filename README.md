@@ -95,6 +95,25 @@ Running `npx eslint` should prompt you to install the required dependencies, oth
 pnpm i -D astro-eslint-parser eslint-plugin-astro prettier-plugin-astro
 ```
 
+### Angular
+
+To enable Angular support, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import xwbx from "@xwbx/eslint-config";
+
+export default xwbx({
+  angular: true,
+});
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+pnpm i -D @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser
+```
+
 ### Prettier
 
 Default option is
