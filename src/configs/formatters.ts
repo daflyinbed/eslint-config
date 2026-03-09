@@ -25,7 +25,7 @@ import type { Options as PrettierOptions } from "prettier";
 
 function mergePrettierOptions(
   options: PrettierOptions,
-  overrides: PrettierOptions = {},
+  overrides: PrettierOptions,
 ) {
   return {
     ...options,
