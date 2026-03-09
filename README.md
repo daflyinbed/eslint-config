@@ -226,7 +226,7 @@ Auto-fixing for the following rules are disabled when ESLint is running in a cod
 
 Since v0.4.0, they are no longer disabled, but made non-fixable using [this helper](https://github.com/antfu/eslint-flat-config-utils#composerdisablerulesfix).
 
-This is to prevent unused imports from getting removed by the editor during refactoring to get a better developer experience. Those rules will be applied when you run ESLint in the terminal or [Lint Staged](#lint-staged). If you don't want this behavior, you can disable them:
+This is to prevent unused imports from getting removed by the editor during refactoring to get a better developer experience. Those rules will be applied when you run ESLint in the terminal or `lint-staged`. If you don't want this behavior, you can disable them:
 
 ```js
 // eslint.config.js
@@ -381,6 +381,67 @@ Enable flat config if you are using ESLint < 9.
     "pcss",
     "postcss",
   ],
+}
+```
+
+## Zed
+
+Add the following settings to your `.zed/settings.json`:
+
+```jsonc
+{
+  "format_on_save": "on",
+  "formatter": [
+    // Use ESLint's --fix:
+    { "code_action": "source.fixAll.eslint" },
+  ],
+  // Enable eslint for all supported languages
+  // Defaults only include https://github.com/search?q=repo%3Azed-industries%2Fzed%20eslint_languages&type=code
+  "languages": {
+    "HTML": {
+      "language_servers": ["...", "eslint"],
+    },
+    "Markdown": {
+      "language_servers": ["...", "eslint"],
+    },
+    "JSON": {
+      "language_servers": ["...", "eslint"],
+    },
+    "JSONC": {
+      "language_servers": ["...", "eslint"],
+    },
+    "YAML": {
+      "language_servers": ["...", "eslint"],
+    },
+    "CSS": {
+      "language_servers": ["...", "eslint"],
+    },
+    // Add other languages as needed
+  },
+  "lsp": {
+    "eslint": {
+      "settings": {
+        // Remove after https://github.com/zed-industries/zed/issues/49387
+        "experimental": {
+          "useFlatConfig": false,
+        },
+
+        // Silent the stylistic rules in your IDE, but still auto fix them
+        "rulesCustomizations": [
+          { "rule": "style/*", "severity": "off", "fixable": true },
+          { "rule": "format/*", "severity": "off", "fixable": true },
+          { "rule": "*-indent", "severity": "off", "fixable": true },
+          { "rule": "*-spacing", "severity": "off", "fixable": true },
+          { "rule": "*-spaces", "severity": "off", "fixable": true },
+          { "rule": "*-order", "severity": "off", "fixable": true },
+          { "rule": "*-dangle", "severity": "off", "fixable": true },
+          { "rule": "*-newline", "severity": "off", "fixable": true },
+          { "rule": "*quotes", "severity": "off", "fixable": true },
+          { "rule": "*semi", "severity": "off", "fixable": true },
+        ],
+      },
+    },
+  },
 }
 ```
 
