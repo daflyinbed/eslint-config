@@ -172,13 +172,16 @@
     ],
   },
   {
-    "files": [
-      "**/*.?([cm])[jt]s?(x)",
-    ],
-    "name": "xwbx/jsdoc",
+    "name": "xwbx/jsdoc/setup",
     "plugins": [
       "jsdoc",
     ],
+  },
+  {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
+    "name": "xwbx/jsdoc/rules",
     "rules": [
       "jsdoc/check-access",
       "jsdoc/check-param-names",

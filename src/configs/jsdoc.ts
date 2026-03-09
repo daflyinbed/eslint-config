@@ -5,11 +5,14 @@ import type { TypedFlatConfigItem } from "../types";
 export async function jsdoc(): Promise<TypedFlatConfigItem[]> {
   return [
     {
-      files: [GLOB_SRC],
-      name: "xwbx/jsdoc",
+      name: "xwbx/jsdoc/setup",
       plugins: {
         jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),
       },
+    },
+    {
+      files: [GLOB_SRC],
+      name: "xwbx/jsdoc/rules",
       rules: {
         "jsdoc/check-access": "warn",
         "jsdoc/check-param-names": "warn",
