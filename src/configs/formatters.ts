@@ -23,15 +23,22 @@ import { ensurePackages, isPackageInScope, parserPlain } from "../utils";
 import type { OptionsFormatters, TypedFlatConfigItem } from "../types";
 import type { Options as PrettierOptions } from "prettier";
 
+type PrettierRuleOptions = PrettierOptions & { [key: string]: unknown };
+type PrettierRuleOptionsWithParser = PrettierRuleOptions & { parser: string };
+
 function mergePrettierOptions(
   options: PrettierOptions,
-  overrides: PrettierOptions,
-) {
+  overrides: PrettierRuleOptionsWithParser,
+): PrettierRuleOptionsWithParser;
+function mergePrettierOptions(
+  options: PrettierOptions,
+  overrides: PrettierRuleOptionsWithParser,
+): PrettierRuleOptionsWithParser {
   return {
     ...options,
     ...overrides,
     plugins: [...(overrides.plugins || []), ...(options.plugins || [])],
-  } as PrettierOptions & { parser?: string };
+  };
 }
 
 export async function formatters(
@@ -106,11 +113,11 @@ export async function formatters(
         "style/quotes": [
           "error",
           prettierOptions.singleQuote ? "single" : "double",
-          { allowTemplateLiterals: false, avoidEscape: true },
+          { allowTemplateLiterals: "never", avoidEscape: true },
         ],
         "format/prettier": [
           "error",
-          mergePrettierOptions(prettierOptions, { parser: undefined }),
+          mergePrettierOptions(prettierOptions, { parser: "babel-ts" }),
         ],
       },
     },
@@ -125,11 +132,11 @@ export async function formatters(
         "style/quotes": [
           "error",
           prettierOptions.singleQuote ? "single" : "double",
-          { allowTemplateLiterals: false, avoidEscape: true },
+          { allowTemplateLiterals: "never", avoidEscape: true },
         ],
         "format/prettier": [
           "error",
-          mergePrettierOptions(prettierOptions, { parser: undefined }),
+          mergePrettierOptions(prettierOptions, { parser: "vue" }),
         ],
       },
     },
