@@ -7,6 +7,7 @@ import {
   command,
   comments,
   disables,
+  e18e,
   formatters,
   ignores,
   imports,
@@ -91,6 +92,7 @@ export function xwbx(
     astro: enableAstro = isPackageExists("astro"),
     autoRenamePlugins = true,
     componentExts = [],
+    e18e: enableE18e = true,
     gitignore: enableGitignore = true,
     ignores: userIgnores = [],
     imports: enableImports = true,
@@ -178,6 +180,15 @@ export function xwbx(
     configs.push(
       imports({
         ...resolveSubOptions(options, "imports"),
+      }),
+    );
+  }
+
+  if (enableE18e) {
+    configs.push(
+      e18e({
+        isInEditor,
+        ...(enableE18e === true ? {} : enableE18e),
       }),
     );
   }

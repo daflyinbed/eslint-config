@@ -173,6 +173,29 @@ export interface OptionsComponentExts {
   componentExts?: string[];
 }
 
+export interface OptionsE18e extends OptionsOverrides {
+  /**
+   * Include modernization rules.
+   *
+   * @default true
+   */
+  modernization?: boolean;
+
+  /**
+   * Include module replacements rules.
+   *
+   * @default options.isInEditor
+   */
+  moduleReplacements?: boolean;
+
+  /**
+   * Include performance improvements rules.
+   *
+   * @default true
+   */
+  performanceImprovements?: boolean;
+}
+
 export interface OptionsUnicorn extends OptionsOverrides {
   /**
    * Include all rules recommended by `eslint-plugin-unicorn`, instead of only ones picked by Anthony.
@@ -379,6 +402,13 @@ export interface OptionsConfig
    * @default true
    */
   jsx?: boolean | OptionsJSX;
+
+  /**
+   * Options for [@e18e/eslint-plugin](https://github.com/e18e/eslint-plugin).
+   *
+   * @default true
+   */
+  e18e?: boolean | OptionsE18e;
 
   /**
    * Options for eslint-plugin-unicorn.
