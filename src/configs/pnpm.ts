@@ -16,11 +16,10 @@ async function detectCatalogUsage(): Promise<boolean> {
 export async function pnpm(
   options: OptionsPnpm,
 ): Promise<TypedFlatConfigItem[]> {
-  const [pluginPnpm, pluginYaml, yamlParser, jsoncParser] = await Promise.all([
+  const [pluginPnpm, pluginYaml, yamlParser] = await Promise.all([
     interopDefault(import("eslint-plugin-pnpm")),
     interopDefault(import("eslint-plugin-yml")),
     interopDefault(import("yaml-eslint-parser")),
-    interopDefault(import("jsonc-eslint-parser")),
   ]);
 
   const {
@@ -36,9 +35,7 @@ export async function pnpm(
   if (json) {
     configs.push({
       files: ["package.json", "**/package.json"],
-      languageOptions: {
-        parser: jsoncParser,
-      },
+      language: "jsonc/x",
       name: "xwbx/pnpm/package-json",
       plugins: {
         pnpm: pluginPnpm,

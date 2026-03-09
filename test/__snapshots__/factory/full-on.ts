@@ -1241,9 +1241,7 @@
       "**/*.json5",
       "**/*.jsonc",
     ],
-    "languageOptions": {
-      "parser": "jsonc-eslint-parser",
-    },
+    "language": "jsonc/x",
     "name": "xwbx/jsonc",
     "plugins": [
       "jsonc",
@@ -1302,9 +1300,7 @@
       "package.json",
       "**/package.json",
     ],
-    "languageOptions": {
-      "parser": "jsonc-eslint-parser",
-    },
+    "language": "jsonc/x",
     "name": "xwbx/pnpm/package-json",
     "plugins": [
       "pnpm",
