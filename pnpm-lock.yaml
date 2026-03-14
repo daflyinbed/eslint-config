@@ -5,10 +5,11 @@ settings:
   excludeLinksFromLockfile: false
 
 catalogs:
-  dev:
+  default:
     '@angular/core':
-      specifier: ^21.2.1
-      version: 21.2.1
+      specifier: 21.2.4
+      version: 21.2.4
+  dev:
     '@eslint/config-inspector':
       specifier: ^1.5.0
       version: 1.5.0
@@ -335,7 +336,7 @@ importers:
         version: 21.3.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
       '@angular/core':
         specifier: catalog:dev
-        version: 21.2.1(rxjs@7.8.2)
+        version: 21.2.4(rxjs@7.8.2)
       '@eslint-react/eslint-plugin':
         specifier: catalog:peer
         version: 2.13.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
@@ -446,11 +447,11 @@ packages:
       eslint: ^10.0.2
       typescript: '*'
 
-  '@angular/core@21.2.1':
-    resolution: {integrity: sha512-pFTbg03s2ZI5cHNT+eWsGjwIIKiYkeAnodFbCAHjwFi9KCEYlTykFLjr9lcpGrBddfmAH7GE08Q73vgmsdcNHw==}
+  '@angular/core@21.2.4':
+    resolution: {integrity: sha512-2+gd67ZuXHpGOqeb2o7XZPueEWEP81eJza2tSHkT5QMV8lnYllDEmaNnkPxnIjSLGP1O3PmiXxo4z8ibHkLZwg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
-      '@angular/compiler': 21.2.1
+      '@angular/compiler': 21.2.4
       rxjs: ^6.5.3 || ^7.4.0
       zone.js: ~0.15.0 || ~0.16.0
     peerDependenciesMeta:
@@ -3508,7 +3509,7 @@ snapshots:
       eslint: 10.0.3(jiti@2.6.1)
       typescript: 5.9.3
 
-  '@angular/core@21.2.1(rxjs@7.8.2)':
+  '@angular/core@21.2.4(rxjs@7.8.2)':
     dependencies:
       rxjs: 7.8.2
       tslib: 2.8.1
