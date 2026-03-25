@@ -4,7 +4,7 @@ import { isPackageExists } from "local-pkg";
 import type { Awaitable, TypedFlatConfigItem } from "./types";
 
 const scopeUrl = fileURLToPath(new URL(".", import.meta.url));
-const isCwdInScope = isPackageExists("@antfu/eslint-config");
+const isCwdInScope = isPackageExists("@xwbx/eslint-config");
 
 export const parserPlain = {
   meta: {
@@ -43,7 +43,7 @@ export async function combine(
  *
  * @example
  * ```ts
- * import { renameRules } from '@antfu/eslint-config'
+ * import { renameRules } from '@xwbx/eslint-config'
  *
  * export default [{
  *   rules: renameRules(
@@ -75,7 +75,7 @@ export function renameRules(
  *
  * @example
  * ```ts
- * import { renamePluginInConfigs } from '@antfu/eslint-config'
+ * import { renamePluginInConfigs } from '@xwbx/eslint-config'
  * import someConfigs from './some-configs'
  *
  * export default renamePluginInConfigs(someConfigs, {
