@@ -18,6 +18,7 @@ export * from "./node";
 export * from "./pnpm";
 export * from "./react";
 export * from "./regexp";
+export * from "./solid";
 export * from "./sort";
 export * from "./test";
 export * from "./toml";

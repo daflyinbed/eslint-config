@@ -1224,6 +1224,49 @@
     },
   },
   {
+    "name": "xwbx/solid/setup",
+    "plugins": [
+      "solid",
+    ],
+  },
+  {
+    "files": [
+      "**/*.?([cm])jsx",
+      "**/*.?([cm])tsx",
+    ],
+    "languageOptions": {
+      "parser": "typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true,
+        },
+        "project": [
+          "tsconfig.json",
+        ],
+      },
+      "sourceType": "module",
+    },
+    "name": "xwbx/solid/rules",
+    "rules": [
+      "solid/components-return-once",
+      "solid/event-handlers",
+      "solid/imports",
+      "solid/jsx-no-duplicate-props",
+      "solid/jsx-no-script-url",
+      "solid/jsx-no-undef",
+      "solid/jsx-uses-vars",
+      "solid/no-destructure",
+      "solid/no-innerhtml",
+      "solid/no-react-deps",
+      "solid/no-react-specific-props",
+      "- solid/no-unknown-namespaces",
+      "solid/prefer-for",
+      "solid/reactivity",
+      "solid/self-closing-comp",
+      "solid/style-prop",
+    ],
+  },
+  {
     "name": "xwbx/angular/setup",
     "plugins": [
       "angular",

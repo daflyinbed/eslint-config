@@ -21,6 +21,7 @@ import {
   pnpm,
   react,
   regexp,
+  solid,
   sortImport,
   sortPackageJson,
   sortTsconfig,
@@ -105,7 +106,7 @@ export function xwbx(
     react: enableReact = false,
     nextjs: enableNextjs = false,
     regexp: enableRegexp = true,
-    // solid: enableSolid = false,
+    solid: enableSolid = false,
     // svelte: enableSvelte = false,
     typescript: enableTypeScript = isPackageExists("typescript") ||
       isPackageExists("@typescript/native-preview"),
@@ -262,6 +263,16 @@ export function xwbx(
     );
   }
 
+  if (enableSolid) {
+    configs.push(
+      solid({
+        overrides: getOverrides(options, "solid"),
+        tsconfigPath,
+        typescript: !!enableTypeScript,
+      }),
+    );
+  }
+
   if (enableAngular) {
     configs.push(
       angular({
@@ -269,14 +280,6 @@ export function xwbx(
       }),
     );
   }
-
-  // if (enableSolid) {
-  //   configs.push(solid({
-  //     overrides: getOverrides(options, 'solid'),
-  //     tsconfigPath,
-  //     typescript: !!enableTypeScript,
-  //   }))
-  // }
 
   // if (enableSvelte) {
   //   configs.push(svelte({
