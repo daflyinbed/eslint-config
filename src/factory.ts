@@ -104,7 +104,8 @@ export function xwbx(
     regexp: enableRegexp = true,
     // solid: enableSolid = false,
     // svelte: enableSvelte = false,
-    typescript: enableTypeScript = isPackageExists("typescript"),
+    typescript: enableTypeScript = isPackageExists("typescript") ||
+      isPackageExists("@typescript/native-preview"),
     unicorn: enableUnicorn = true,
     unocss: enableUnoCSS = UnocssPackages.some((i) => isPackageExists(i)),
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
