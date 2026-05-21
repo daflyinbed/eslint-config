@@ -735,6 +735,7 @@
       "test/prefer-lowercase-title",
       "- unicorn/consistent-function-scoping",
       "- antfu/no-top-level-await",
+      "- e18e/prefer-static-regex",
       "- no-unused-expressions",
       "- node/prefer-global/process",
       "- ts/explicit-function-return-type",
@@ -970,6 +971,7 @@
     "name": "xwbx/markdown/disables/code",
     "rules": [
       "- antfu/no-top-level-await",
+      "- e18e/prefer-static-regex",
       "- import/newline-after-import",
       "- no-alert",
       "- no-console",

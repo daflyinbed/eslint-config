@@ -53,6 +53,7 @@ export async function test(
         ...{
           "unicorn/consistent-function-scoping": "off",
           "antfu/no-top-level-await": "off",
+          "e18e/prefer-static-regex": "off",
           "no-unused-expressions": "off",
           "node/prefer-global/process": "off",
           "ts/explicit-function-return-type": "off",
