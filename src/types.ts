@@ -519,6 +519,17 @@ export interface OptionsConfig
    * @default false
    */
   react?: boolean | OptionsReact;
+
+  /**
+   * Enable Next.js rules.
+   *
+   * Requires installing:
+   * - `@next/eslint-plugin-next`
+   *
+   * @default false
+   */
+  nextjs?: boolean | OptionsOverrides;
+
   /**
    * Enable solid rules.
    *

@@ -16,6 +16,7 @@ import {
   jsonc,
   jsx,
   markdown,
+  nextjs,
   node,
   pnpm,
   react,
@@ -60,6 +61,7 @@ export const defaultPluginRenaming = {
   "@eslint-react/hooks-extra": "react-hooks-extra",
   "@eslint-react/naming-convention": "react-naming-convention",
 
+  "@next/next": "next",
   "@stylistic": "style",
   "@typescript-eslint": "ts",
   "import-lite": "import",
@@ -101,6 +103,7 @@ export function xwbx(
     node: enableNode = true,
     pnpm: enableCatalogs = !!findUpSync("pnpm-workspace.yaml"),
     react: enableReact = false,
+    nextjs: enableNextjs = false,
     regexp: enableRegexp = true,
     // solid: enableSolid = false,
     // svelte: enableSvelte = false,
@@ -247,6 +250,14 @@ export function xwbx(
         ...resolveSubOptions(options, "react"),
         overrides: getOverrides(options, "react"),
         tsconfigPath,
+      }),
+    );
+  }
+
+  if (enableNextjs) {
+    configs.push(
+      nextjs({
+        overrides: getOverrides(options, "nextjs"),
       }),
     );
   }

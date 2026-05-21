@@ -13,6 +13,7 @@ export * from "./jsdoc";
 export * from "./jsonc";
 export * from "./jsx";
 export * from "./markdown";
+export * from "./nextjs";
 export * from "./node";
 export * from "./pnpm";
 export * from "./react";

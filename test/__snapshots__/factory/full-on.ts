@@ -1176,6 +1176,54 @@
     ],
   },
   {
+    "name": "xwbx/nextjs/setup",
+    "plugins": [
+      "next",
+    ],
+  },
+  {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
+    "languageOptions": {
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true,
+        },
+      },
+      "sourceType": "module",
+    },
+    "name": "xwbx/nextjs/rules",
+    "rules": [
+      "next/google-font-display",
+      "next/google-font-preconnect",
+      "next/next-script-for-ga",
+      "next/no-async-client-component",
+      "next/no-before-interactive-script-outside-document",
+      "next/no-css-tags",
+      "next/no-head-element",
+      "next/no-html-link-for-pages",
+      "next/no-img-element",
+      "next/no-page-custom-font",
+      "next/no-styled-jsx-in-document",
+      "next/no-sync-scripts",
+      "next/no-title-in-document-head",
+      "next/no-typos",
+      "next/no-unwanted-polyfillio",
+      "next/inline-script-id",
+      "next/no-assign-module-variable",
+      "next/no-document-import-in-page",
+      "next/no-duplicate-head",
+      "next/no-head-import-in-document",
+      "next/no-script-component-in-head",
+    ],
+    "settings": {
+      "react": {
+        "version": "detect",
+      },
+    },
+  },
+  {
     "name": "xwbx/angular/setup",
     "plugins": [
       "angular",

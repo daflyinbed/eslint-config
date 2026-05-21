@@ -13,6 +13,7 @@ export const CONFIG_PRESET_FULL_ON: OptionsConfig = {
     a11y: true,
   },
   markdown: true,
+  nextjs: true,
   node: true,
   pnpm: true,
   react: {
@@ -44,6 +45,7 @@ export const CONFIG_PRESET_FULL_OFF: OptionsConfig = {
   jsonc: false,
   jsx: false,
   markdown: false,
+  nextjs: false,
   node: false,
   pnpm: false,
   react: false,
