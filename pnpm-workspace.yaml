@@ -43,7 +43,10 @@ catalogs:
     eslint-plugin-react-hooks: ^7.0.1
     eslint-plugin-react-refresh: ^0.5.2
     eslint-plugin-solid: ^0.14.5
+    eslint-plugin-svelte: ^3.17.1
     prettier-plugin-astro: ^0.14.1
+    prettier-plugin-svelte: ^4.0.1
+    svelte-eslint-parser: ^1.6.1
   prod:
     "@antfu/install-pkg": ^1.1.0
     "@clack/prompts": ^1.1.0

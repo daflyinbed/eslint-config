@@ -45,8 +45,11 @@
     "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-react-refresh": "^0.5.0",
     "eslint-plugin-solid": "^0.14.3",
+    "eslint-plugin-svelte": ">=2.35.1",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "prettier-plugin-astro": "^0.14.0"
+    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-svelte": ">=3.0.0",
+    "svelte-eslint-parser": ">=0.37.0"
   },
   "peerDependenciesMeta": {
     "@angular-eslint/eslint-plugin": {
@@ -88,10 +91,19 @@
     "eslint-plugin-solid": {
       "optional": true
     },
+    "eslint-plugin-svelte": {
+      "optional": true
+    },
     "eslint-plugin-vuejs-accessibility": {
       "optional": true
     },
     "prettier-plugin-astro": {
+      "optional": true
+    },
+    "prettier-plugin-svelte": {
+      "optional": true
+    },
+    "svelte-eslint-parser": {
       "optional": true
     }
   },
@@ -154,12 +166,15 @@
     "eslint-plugin-react-hooks": "catalog:peer",
     "eslint-plugin-react-refresh": "catalog:peer",
     "eslint-plugin-solid": "catalog:peer",
+    "eslint-plugin-svelte": "catalog:peer",
     "eslint-typegen": "catalog:dev",
     "execa": "catalog:dev",
     "find-up-simple": "catalog:inline",
     "husky": "catalog:dev",
     "lint-staged": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
+    "prettier-plugin-svelte": "catalog:peer",
+    "svelte-eslint-parser": "catalog:peer",
     "tinyglobby": "catalog:dev",
     "tsup": "catalog:dev",
     "tsx": "catalog:dev",

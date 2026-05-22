@@ -7,7 +7,7 @@ and Prettier.
 
 - Format with Prettier.
 - Designed to work with TypeScript, Vue 2 and 3 out-of-box.
-- Support Astro, JSON(5), YAML, Markdown, ...
+- Support Astro, Svelte, Next.js, JSON(5), YAML, Markdown, ...
 - Sort imports, `package.json`, `tsconfig.json`...
 - [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
 - Ignores common files like `dist`, `node_modules`, `coverage`, and files in `.gitignore`.
@@ -34,6 +34,9 @@ export default xwbx(
     vue: true,
     unocss: true,
     astro: true,
+    // Svelte and Next.js need to be explicitly enabled
+    svelte: true,
+    nextjs: true,
     // Disable jsonc yaml and toml support
     jsonc: false,
     yaml: false,
@@ -112,6 +115,64 @@ Running `npx eslint` should prompt you to install the required dependencies, oth
 
 ```bash
 pnpm i -D @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser
+```
+
+### Svelte
+
+To enable Svelte support, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import xwbx from "@xwbx/eslint-config";
+
+export default xwbx({
+  svelte: true,
+});
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+pnpm i -D eslint-plugin-svelte
+```
+
+If you also want formatting support for `.svelte` files, enable `formatters.svelte`:
+
+```js
+export default xwbx({
+  svelte: true,
+  formatters: {
+    svelte: true,
+  },
+});
+```
+
+This requires installing `prettier-plugin-svelte`:
+
+- Svelte 5: `prettier-plugin-svelte` v4
+- Svelte 3/4: `prettier-plugin-svelte` v3
+
+```bash
+pnpm i -D prettier-plugin-svelte
+```
+
+### Next.js
+
+To enable Next.js support, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import xwbx from "@xwbx/eslint-config";
+
+export default xwbx({
+  nextjs: true,
+});
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+pnpm i -D @next/eslint-plugin-next
 ```
 
 ### Prettier
@@ -195,15 +256,16 @@ The command comments are usually one-off and will be removed along with the tran
 
 Since flat config requires us to explicitly provide the plugin names (instead of the mandatory convention from npm package name), we renamed some plugins to make the overall scope more consistent and easier to write.
 
-| New Prefix | Original Prefix        | Source Plugin                                                                              |
-| ---------- | ---------------------- | ------------------------------------------------------------------------------------------ |
-| `import/*` | `import-lite/*`        | [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)          |
-| `node/*`   | `n/*`                  | [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)                     |
-| `yaml/*`   | `yml/*`                | [eslint-plugin-yml](https://github.com/ota-meshi/eslint-plugin-yml)                        |
-| `ts/*`     | `@typescript-eslint/*` | [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint) |
-| `style/*`  | `@stylistic/*`         | [@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic)           |
-| `test/*`   | `vitest/*`             | [@vitest/eslint-plugin](https://github.com/vitest-dev/eslint-plugin-vitest)                |
-| `test/*`   | `no-only-tests/*`      | [eslint-plugin-no-only-tests](https://github.com/levibuzolic/eslint-plugin-no-only-tests)  |
+| New Prefix | Original Prefix        | Source Plugin                                                                                         |
+| ---------- | ---------------------- | ----------------------------------------------------------------------------------------------------- |
+| `import/*` | `import-lite/*`        | [eslint-plugin-import-lite](https://github.com/9romise/eslint-plugin-import-lite)                     |
+| `node/*`   | `n/*`                  | [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)                                |
+| `yaml/*`   | `yml/*`                | [eslint-plugin-yml](https://github.com/ota-meshi/eslint-plugin-yml)                                   |
+| `ts/*`     | `@typescript-eslint/*` | [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint)            |
+| `style/*`  | `@stylistic/*`         | [@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic)                      |
+| `test/*`   | `vitest/*`             | [@vitest/eslint-plugin](https://github.com/vitest-dev/eslint-plugin-vitest)                           |
+| `test/*`   | `no-only-tests/*`      | [eslint-plugin-no-only-tests](https://github.com/levibuzolic/eslint-plugin-no-only-tests)             |
+| `next/*`   | `@next/next`           | [@next/eslint-plugin-next](https://github.com/vercel/next.js/tree/canary/packages/eslint-plugin-next) |
 
 When you want to override rules, or disable them inline, you need to update to the new prefix:
 
@@ -375,6 +437,7 @@ Enable flat config if you are using ESLint < 9.
     "gql",
     "graphql",
     "astro",
+    "svelte",
     "css",
     "less",
     "scss",

@@ -404,6 +404,33 @@
   },
   {
     "files": [
+      "**/*.svelte?(.{js,ts})",
+    ],
+    "languageOptions": {
+      "parser": "parser-plain",
+    },
+    "name": "xwbx/formatter/svelte",
+    "rules": [
+      "format/prettier",
+    ],
+  },
+  {
+    "files": [
+      "**/*.svelte?(.{js,ts})",
+    ],
+    "name": "xwbx/formatter/svelte/disables",
+    "rules": [
+      "- style/arrow-parens",
+      "- style/block-spacing",
+      "- style/comma-dangle",
+      "- style/indent",
+      "- style/no-multi-spaces",
+      "- style/quotes",
+      "- style/semi",
+    ],
+  },
+  {
+    "files": [
       "**/*.{g,graph}ql",
     ],
     "languageOptions": {
@@ -1310,6 +1337,59 @@
       "- style/indent",
       "style/no-multiple-empty-lines",
       "- style/no-trailing-spaces",
+    ],
+  },
+  {
+    "name": "xwbx/svelte/setup",
+    "plugins": [
+      "svelte",
+    ],
+  },
+  {
+    "files": [
+      "**/*.svelte?(.{js,ts})",
+    ],
+    "languageOptions": {
+      "parser": "svelte-eslint-parser",
+      "parserOptions": {
+        "extraFileExtensions": [
+          ".svelte",
+        ],
+      },
+    },
+    "name": "xwbx/svelte/rules",
+    "processor": "eslint-plugin-svelte",
+    "rules": [
+      "- no-undef",
+      "no-unused-vars",
+      "svelte/comment-directive",
+      "svelte/no-at-debug-tags",
+      "svelte/no-at-html-tags",
+      "svelte/no-dupe-else-if-blocks",
+      "svelte/no-dupe-style-properties",
+      "svelte/no-dupe-use-directives",
+      "svelte/no-export-load-in-svelte-module-in-kit-pages",
+      "svelte/no-inner-declarations",
+      "svelte/no-not-function-handler",
+      "svelte/no-object-in-text-mustaches",
+      "svelte/no-reactive-functions",
+      "svelte/no-reactive-literals",
+      "svelte/no-shorthand-style-property-overrides",
+      "svelte/no-unknown-style-directive-property",
+      "svelte/no-unused-svelte-ignore",
+      "svelte/no-useless-mustaches",
+      "svelte/require-store-callbacks-use-set-param",
+      "svelte/system",
+      "svelte/valid-each-key",
+      "unused-imports/no-unused-vars",
+      "- svelte/derived-has-same-inputs-outputs",
+      "- svelte/html-closing-bracket-spacing",
+      "- svelte/html-quotes",
+      "- svelte/indent",
+      "- svelte/mustache-spacing",
+      "- svelte/no-spaces-around-equal-signs-in-attribute",
+      "- svelte/no-trailing-spaces",
+      "- svelte/spaced-html-comment",
     ],
   },
   {

@@ -12,6 +12,7 @@ import {
   GLOB_POSTCSS,
   GLOB_SCSS,
   GLOB_SRC,
+  GLOB_SVELTE,
   GLOB_SVG,
   GLOB_TOML,
   GLOB_VUE,
@@ -59,6 +60,7 @@ export async function formatters(
     graphql: true,
     html: true,
     markdown: true,
+    svelte: isPackageInScope("prettier-plugin-svelte"),
     yaml: true,
     slidev: isPackageInScope("@slidev/cli"),
     svg: isPrettierPluginXmlInScope,
@@ -82,6 +84,7 @@ export async function formatters(
   await ensurePackages([
     options.markdown && options.slidev ? "prettier-plugin-slidev" : undefined,
     options.astro ? "prettier-plugin-astro" : undefined,
+    options.svelte ? "prettier-plugin-svelte" : undefined,
     needPluginXml ? "@prettier/plugin-xml" : undefined,
   ]);
 
@@ -360,6 +363,40 @@ export async function formatters(
       {
         files: [GLOB_ASTRO, GLOB_ASTRO_TS],
         name: "xwbx/formatter/astro/disables",
+        rules: {
+          "style/arrow-parens": "off",
+          "style/block-spacing": "off",
+          "style/comma-dangle": "off",
+          "style/indent": "off",
+          "style/no-multi-spaces": "off",
+          "style/quotes": "off",
+          "style/semi": "off",
+        },
+      },
+    );
+  }
+
+  if (options.svelte) {
+    configs.push(
+      {
+        files: [GLOB_SVELTE],
+        languageOptions: {
+          parser: parserPlain,
+        },
+        name: "xwbx/formatter/svelte",
+        rules: {
+          "format/prettier": [
+            "error",
+            mergePrettierOptions(prettierOptions, {
+              parser: "svelte",
+              plugins: ["prettier-plugin-svelte"],
+            }),
+          ],
+        },
+      },
+      {
+        files: [GLOB_SVELTE],
+        name: "xwbx/formatter/svelte/disables",
         rules: {
           "style/arrow-parens": "off",
           "style/block-spacing": "off",

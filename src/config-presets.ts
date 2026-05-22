@@ -21,6 +21,7 @@ export const CONFIG_PRESET_FULL_ON: OptionsConfig = {
   },
   regexp: true,
   solid: true,
+  svelte: true,
   test: true,
   toml: true,
   typescript: {
@@ -51,6 +52,7 @@ export const CONFIG_PRESET_FULL_OFF: OptionsConfig = {
   react: false,
   regexp: false,
   solid: false,
+  svelte: false,
   test: false,
   toml: false,
   typescript: false,

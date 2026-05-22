@@ -404,6 +404,33 @@
   },
   {
     "files": [
+      "**/*.svelte?(.{js,ts})",
+    ],
+    "languageOptions": {
+      "parser": "parser-plain",
+    },
+    "name": "xwbx/formatter/svelte",
+    "rules": [
+      "format/prettier",
+    ],
+  },
+  {
+    "files": [
+      "**/*.svelte?(.{js,ts})",
+    ],
+    "name": "xwbx/formatter/svelte/disables",
+    "rules": [
+      "- style/arrow-parens",
+      "- style/block-spacing",
+      "- style/comma-dangle",
+      "- style/indent",
+      "- style/no-multi-spaces",
+      "- style/quotes",
+      "- style/semi",
+    ],
+  },
+  {
+    "files": [
       "**/*.{g,graph}ql",
     ],
     "languageOptions": {

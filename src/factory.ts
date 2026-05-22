@@ -25,6 +25,7 @@ import {
   sortImport,
   sortPackageJson,
   sortTsconfig,
+  svelte,
   test,
   toml,
   typescript,
@@ -107,7 +108,7 @@ export function xwbx(
     nextjs: enableNextjs = false,
     regexp: enableRegexp = true,
     solid: enableSolid = false,
-    // svelte: enableSvelte = false,
+    svelte: enableSvelte = false,
     typescript: enableTypeScript = isPackageExists("typescript") ||
       isPackageExists("@typescript/native-preview"),
     unicorn: enableUnicorn = true,
@@ -281,13 +282,14 @@ export function xwbx(
     );
   }
 
-  // if (enableSvelte) {
-  //   configs.push(svelte({
-  //     overrides: getOverrides(options, 'svelte'),
-  //     stylistic: stylisticOptions,
-  //     typescript: !!enableTypeScript,
-  //   }))
-  // }
+  if (enableSvelte) {
+    configs.push(
+      svelte({
+        overrides: getOverrides(options, "svelte"),
+        typescript: !!enableTypeScript,
+      }),
+    );
+  }
 
   if (enableUnoCSS) {
     configs.push(

@@ -160,6 +160,16 @@ export interface OptionsFormatters {
    */
   astro?: "prettier" | boolean;
 
+  /**
+   * Enable formatting support for Svelte.
+   *
+   * Currently only support Prettier.
+   * Requires installing `prettier-plugin-svelte`.
+   * - Svelte 5: `prettier-plugin-svelte` v4
+   * - Svelte 3/4: `prettier-plugin-svelte` v3
+   */
+  svelte?: boolean;
+
   yaml?: boolean;
 }
 
@@ -548,7 +558,7 @@ export interface OptionsConfig
    *
    * @default false
    */
-  // svelte?: boolean;
+  svelte?: boolean | OptionsOverrides;
 
   /**
    * Enable unocss rules.
