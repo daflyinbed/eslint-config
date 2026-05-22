@@ -109,6 +109,7 @@ export function xwbx(
     regexp: enableRegexp = true,
     solid: enableSolid = false,
     svelte: enableSvelte = false,
+    type: appType = "app",
     typescript: enableTypeScript = isPackageExists("typescript") ||
       isPackageExists("@typescript/native-preview"),
     unicorn: enableUnicorn = true,
@@ -194,6 +195,7 @@ export function xwbx(
     configs.push(
       e18e({
         isInEditor,
+        type: appType,
         ...(enableE18e === true ? {} : enableE18e),
       }),
     );
@@ -217,7 +219,7 @@ export function xwbx(
         ...typescriptOptions,
         componentExts,
         overrides: getOverrides(options, "typescript"),
-        type: options.type,
+        type: appType,
       }),
     );
   }

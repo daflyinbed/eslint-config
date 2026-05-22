@@ -194,7 +194,7 @@ export interface OptionsE18e extends OptionsOverrides {
   /**
    * Include module replacements rules.
    *
-   * @default options.isInEditor
+   * @default type === 'lib' && isInEditor
    */
   moduleReplacements?: boolean;
 
