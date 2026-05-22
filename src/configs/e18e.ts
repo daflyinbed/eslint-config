@@ -45,6 +45,12 @@ export async function e18e(
           ? { ...configs.performanceImprovements?.rules }
           : {}),
 
+        ...(type === "lib"
+          ? {}
+          : {
+              "e18e/prefer-static-regex": "off",
+            }),
+
         // these are a bit opinionated and dangerous (introducing behavioral changes), so we'll disable them by default for now
         "e18e/prefer-array-at": "off",
         "e18e/prefer-array-from-map": "off",
