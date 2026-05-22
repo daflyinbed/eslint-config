@@ -1,63 +1,17 @@
 import fs from "node:fs/promises";
+
 import { flatConfigsToRulesDTS } from "eslint-typegen/core";
 import { builtinRules } from "eslint/use-at-your-own-risk";
-import {
-  astro,
-  combine,
-  command,
-  comments,
-  e18e,
-  formatters,
-  imports,
-  javascript,
-  jsonc,
-  jsx,
-  markdown,
-  node,
-  regexp,
-  sortImport,
-  sortPackageJson,
-  sortTsconfig,
-  test,
-  toml,
-  typescript,
-  unicorn,
-  unocss,
-  vue,
-  yaml,
-} from "../src";
+import { CONFIG_PRESET_FULL_ON } from "../src/config-presets";
+import { xwbx } from "../src/factory";
 
-const configs = await combine(
-  {
-    plugins: {
-      "": {
-        rules: Object.fromEntries(builtinRules.entries()),
-      },
+const configs = await xwbx(CONFIG_PRESET_FULL_ON).prepend({
+  plugins: {
+    "": {
+      rules: Object.fromEntries(builtinRules.entries()),
     },
   },
-  command(),
-  formatters(),
-  astro(),
-  comments(),
-  e18e(),
-  imports(),
-  javascript(),
-  jsx(),
-  jsonc(),
-  markdown(),
-  node(),
-  sortPackageJson(),
-  sortImport(),
-  sortTsconfig(),
-  test(),
-  toml(),
-  regexp(),
-  typescript(),
-  unicorn(),
-  unocss(),
-  vue(),
-  yaml(),
-);
+});
 
 const configNames = configs.map((i) => i.name).filter(Boolean) as string[];
 

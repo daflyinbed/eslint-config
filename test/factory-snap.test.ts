@@ -4,7 +4,7 @@ import {
   CONFIG_PRESET_FULL_ON,
 } from "../src/config-presets";
 import { xwbx } from "../src/factory";
-import type { OptionsConfig, TypedFlatConfigItem } from "src/types";
+import type { OptionsConfig, TypedFlatConfigItem } from "../src/types";
 
 interface Suite {
   name: string;
