@@ -9,19 +9,17 @@
   "homepage": "https://github.com/daflyinbed/eslint-config",
   "keywords": ["eslint-config"],
   "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "files": ["dist"],
   "scripts": {
-    "build": "pnpm run typegen && tsup --clean --dts",
-    "stub": "tsup",
+    "build": "pnpm run typegen && tsdown --clean --dts",
+    "stub": "tsdown",
     "dev": "npx @eslint/config-inspector --host 0.0.0.0",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
-    "watch": "tsup --watch",
+    "watch": "tsdown --watch",
     "lint": "eslint .",
     "test": "vitest",
     "typegen": "tsx scripts/typegen.ts",
@@ -171,7 +169,7 @@
     "prettier-plugin-svelte": "catalog:peer",
     "svelte-eslint-parser": "catalog:peer",
     "tinyglobby": "catalog:dev",
-    "tsup": "catalog:dev",
+    "tsdown": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",
     "vitest": "catalog:dev"
@@ -187,5 +185,16 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "inlinedDependencies": {
+    "@eslint-community/eslint-utils": "4.9.1",
+    "@typescript-eslint/scope-manager": "8.56.1",
+    "@typescript-eslint/types": "8.56.1",
+    "@typescript-eslint/utils": "8.56.1",
+    "@typescript-eslint/visitor-keys": "8.56.1",
+    "cached-factory": "0.1.0",
+    "eslint-plugin-erasable-syntax-only": "0.4.0",
+    "eslint-visitor-keys": ["3.4.3", "5.0.1"],
+    "find-up-simple": "1.0.1"
   }
 }

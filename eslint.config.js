@@ -1,6 +1,6 @@
 //@ts-check
 // eslint-disable-next-line antfu/no-import-dist
-import { xwbx } from "./dist/index.js";
+import { xwbx } from "./dist/index.mjs";
 
 export default xwbx({
   ignores: ["fixtures"],
