@@ -19,13 +19,13 @@ export async function imports(
 
         "import/consistent-type-specifier-style": ["error", "top-level"],
         "import/first": "error",
-        "import/no-duplicates": "error",
-        "import/no-mutable-exports": "error",
-        "import/no-named-default": "error",
-
-        "import/order": "off",
         // prettier don't do this for me (it reduce empty line count to 1 but don't inject new line)
         "import/newline-after-import": ["error", { count: 1 }],
+        "import/no-duplicates": "error",
+        "import/no-mutable-exports": "error",
+
+        "import/no-named-default": "error",
+        "import/order": "off",
         ...overrides,
       },
     },

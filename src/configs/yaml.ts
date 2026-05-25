@@ -18,11 +18,11 @@ export async function yaml(
 
   return [
     {
-      name: "xwbx/yaml/rules",
       files,
       languageOptions: {
         parser: parserYaml,
       },
+      name: "xwbx/yaml/rules",
       plugins: {
         yaml: pluginYaml,
       },

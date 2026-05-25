@@ -65,6 +65,15 @@ export async function svelte(
             {},
           ),
 
+        "svelte/derived-has-same-inputs-outputs": "off",
+
+        "svelte/html-closing-bracket-spacing": "off",
+        "svelte/html-quotes": "off",
+        "svelte/indent": "off",
+        "svelte/mustache-spacing": "off",
+        "svelte/no-spaces-around-equal-signs-in-attribute": "off",
+        "svelte/no-trailing-spaces": "off",
+        "svelte/spaced-html-comment": "off",
         "unused-imports/no-unused-vars": [
           "error",
           {
@@ -74,15 +83,6 @@ export async function svelte(
             varsIgnorePattern: String.raw`^(_|\$\$Props$|\$\$Events$|\$\$Slots$)`,
           },
         ],
-
-        "svelte/derived-has-same-inputs-outputs": "off",
-        "svelte/html-closing-bracket-spacing": "off",
-        "svelte/html-quotes": "off",
-        "svelte/indent": "off",
-        "svelte/mustache-spacing": "off",
-        "svelte/no-spaces-around-equal-signs-in-attribute": "off",
-        "svelte/no-trailing-spaces": "off",
-        "svelte/spaced-html-comment": "off",
 
         ...overrides,
       },

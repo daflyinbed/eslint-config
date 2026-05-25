@@ -20,10 +20,6 @@ export async function astro(
 
   return [
     {
-      name: "xwbx/astro",
-      plugins: {
-        astro: pluginAstro,
-      },
       files,
       languageOptions: {
         globals: pluginAstro.environments.astro.globals,
@@ -33,6 +29,10 @@ export async function astro(
           parser: parserTs,
         },
         sourceType: "module",
+      },
+      name: "xwbx/astro",
+      plugins: {
+        astro: pluginAstro,
       },
       processor: "astro/client-side-ts",
       rules: {

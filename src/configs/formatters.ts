@@ -46,12 +46,12 @@ export async function formatters(
   options?: OptionsFormatters,
 ): Promise<TypedFlatConfigItem[]> {
   let prettierOptions: PrettierOptions = {
-    tabWidth: 2,
-    useTabs: false,
-    trailingComma: "all",
-    singleQuote: false,
-    semi: true,
     endOfLine: "lf",
+    semi: true,
+    singleQuote: false,
+    tabWidth: 2,
+    trailingComma: "all",
+    useTabs: false,
   };
   const isPrettierPluginXmlInScope = isPackageInScope("@prettier/plugin-xml");
   const defaultOptions = {
@@ -60,11 +60,11 @@ export async function formatters(
     graphql: true,
     html: true,
     markdown: true,
-    svelte: isPackageInScope("prettier-plugin-svelte"),
-    yaml: true,
     slidev: isPackageInScope("@slidev/cli"),
+    svelte: isPackageInScope("prettier-plugin-svelte"),
     svg: isPrettierPluginXmlInScope,
     xml: isPrettierPluginXmlInScope,
+    yaml: true,
   };
   if (!options) {
     options = {
@@ -113,33 +113,33 @@ export async function formatters(
       ignores: [`${GLOB_ASTRO}/**`],
       name: "xwbx/formatter/jslike",
       rules: {
+        "format/prettier": [
+          "error",
+          mergePrettierOptions(prettierOptions, { parser: "babel-ts" }),
+        ],
         "style/quotes": [
           "error",
           prettierOptions.singleQuote ? "single" : "double",
           { allowTemplateLiterals: "never", avoidEscape: true },
-        ],
-        "format/prettier": [
-          "error",
-          mergePrettierOptions(prettierOptions, { parser: "babel-ts" }),
         ],
       },
     },
     {
       files: [GLOB_VUE],
+      ignores: [`${GLOB_ASTRO}/**`],
       languageOptions: {
         parser: parserPlain,
       },
-      ignores: [`${GLOB_ASTRO}/**`],
       name: "xwbx/formatter/vue",
       rules: {
+        "format/prettier": [
+          "error",
+          mergePrettierOptions(prettierOptions, { parser: "vue" }),
+        ],
         "style/quotes": [
           "error",
           prettierOptions.singleQuote ? "single" : "double",
           { allowTemplateLiterals: "never", avoidEscape: true },
-        ],
-        "format/prettier": [
-          "error",
-          mergePrettierOptions(prettierOptions, { parser: "vue" }),
         ],
       },
     },

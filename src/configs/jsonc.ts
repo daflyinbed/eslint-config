@@ -16,12 +16,12 @@ export async function jsonc(
 
   return [
     {
+      files,
+      language: "jsonc/x",
       name: "xwbx/jsonc",
       plugins: {
         jsonc: pluginJsonc as any,
       },
-      files,
-      language: "jsonc/x",
       rules: {
         "jsonc/no-bigint-literals": "error",
         "jsonc/no-binary-expression": "error",

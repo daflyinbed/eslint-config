@@ -120,13 +120,20 @@ export async function vue(
             }),
 
         "node/prefer-global/process": "off",
+        "unicorn/filename-case": [
+          "error",
+          {
+            cases: { kebabCase: true, pascalCase: true },
+            // ignore: [/^(?!.*\.vue$).*$/],
+          },
+        ],
+
         "vue/block-order": [
           "error",
           {
             order: ["template", "script", "style"],
           },
         ],
-
         "vue/component-name-in-template-casing": ["error", "PascalCase"],
         "vue/component-options-name-casing": ["error", "PascalCase"],
         // this is deprecated
@@ -145,19 +152,33 @@ export async function vue(
         ],
         "vue/dot-notation": ["error", { allowKeywords: true }],
         "vue/eqeqeq": ["error", "smart"],
+        "vue/html-closing-bracket-newline": "off",
+        "vue/html-closing-bracket-spacing": "off",
+        "vue/html-end-tags": "off",
+        "vue/html-indent": "off",
+        "vue/html-quotes": "off",
+        "vue/html-self-closing": "off",
+        "vue/max-attributes-per-line": "off",
+        // conflict with prettier
+        "vue/max-len": "off",
         "vue/multi-word-component-names": "off",
+        "vue/multiline-html-element-content-newline": "off",
+        "vue/mustache-interpolation-spacing": "off",
         "vue/no-dupe-keys": "off",
         "vue/no-empty-pattern": "error",
         "vue/no-irregular-whitespace": "error",
         "vue/no-loss-of-precision": "error",
+        "vue/no-multi-spaces": "off",
         "vue/no-restricted-syntax": [
           "error",
           "DebuggerStatement",
           "LabeledStatement",
           "WithStatement",
         ],
+
         "vue/no-restricted-v-bind": ["error", "/^v-/"],
         "vue/no-setup-props-reactivity-loss": "off",
+        "vue/no-spaces-around-equal-signs-in-attribute": "off",
         "vue/no-sparse-arrays": "error",
         "vue/no-unused-refs": "error",
         "vue/no-useless-v-bind": "error",
@@ -176,28 +197,7 @@ export async function vue(
         "vue/require-default-prop": "off",
         "vue/require-prop-types": "off",
 
-        // conflict with prettier
-        "vue/max-len": "off",
-        "vue/html-self-closing": "off",
-        "vue/html-closing-bracket-newline": "off",
-        "vue/html-closing-bracket-spacing": "off",
-        "vue/html-end-tags": "off",
-        "vue/html-indent": "off",
-        "vue/html-quotes": "off",
-        "vue/max-attributes-per-line": "off",
-        "vue/multiline-html-element-content-newline": "off",
-        "vue/mustache-interpolation-spacing": "off",
-        "vue/no-multi-spaces": "off",
-        "vue/no-spaces-around-equal-signs-in-attribute": "off",
         "vue/singleline-html-element-content-newline": "off",
-
-        "unicorn/filename-case": [
-          "error",
-          {
-            cases: { kebabCase: true, pascalCase: true },
-            // ignore: [/^(?!.*\.vue$).*$/],
-          },
-        ],
         ...(a11y
           ? {
               "vue-a11y/alt-text": "error",

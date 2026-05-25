@@ -32,11 +32,11 @@ export async function test(
 
   return [
     {
+      files,
       name: "xwbx/test",
       plugins: {
         test: _pluginTest,
       },
-      files,
       rules: {
         "test/consistent-test-it": [
           "error",
@@ -51,12 +51,12 @@ export async function test(
 
         // Disables
         ...{
-          "unicorn/consistent-function-scoping": "off",
           "antfu/no-top-level-await": "off",
           "e18e/prefer-static-regex": "off",
           "no-unused-expressions": "off",
           "node/prefer-global/process": "off",
           "ts/explicit-function-return-type": "off",
+          "unicorn/consistent-function-scoping": "off",
         },
 
         ...overrides,

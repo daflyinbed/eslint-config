@@ -18,13 +18,13 @@ export async function toml(
 
   return [
     {
-      name: "xwbx/toml",
-      plugins: {
-        toml: pluginToml,
-      },
       files,
       languageOptions: {
         parser: parserToml,
+      },
+      name: "xwbx/toml",
+      plugins: {
+        toml: pluginToml,
       },
       rules: {
         "style/spaced-comment": "off",
