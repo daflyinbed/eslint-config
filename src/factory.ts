@@ -34,6 +34,7 @@ import {
   vue,
   yaml,
 } from "./configs";
+import { GLOB_MARKDOWN } from "./globs";
 import { interopDefault, isInEditorEnv } from "./utils";
 import type { RuleOptions } from "./typegen";
 import type {
@@ -379,6 +380,14 @@ export function xwbx(
   let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>();
 
   composer = composer.append(...configs, ...(userConfigs as any));
+
+  // Markdown uses the `markdown/gfm` language, whose `SourceCode` lacks JS-only
+  // methods like `getAllComments`. Without this, any rule override registered
+  // without a `files` constraint would apply globally and crash on `.md` files.
+  // See https://github.com/antfu/eslint-config/issues/837.
+  if (options.markdown ?? true) {
+    composer = composer.setDefaultIgnores((prev) => [...prev, GLOB_MARKDOWN]);
+  }
 
   if (autoRenamePlugins) {
     composer = composer.renamePlugins(defaultPluginRenaming);

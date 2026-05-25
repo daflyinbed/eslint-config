@@ -3,6 +3,9 @@
   "<ignored>",
   "<ignored>",
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/javascript/rules",
     "plugins": [
       "unused-imports",
@@ -120,6 +123,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/eslint-comments/rules",
     "plugins": [
       "eslint-comments",
@@ -132,6 +138,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/command/rules",
     "plugins": [
       "command",
@@ -141,6 +150,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/sort/import",
     "plugins": [
       "perfectionist",
@@ -451,6 +463,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/imports/rules",
     "plugins": [
       "antfu",
@@ -470,6 +485,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/e18e/rules",
     "plugins": [
       "e18e",
@@ -494,6 +512,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/unicorn",
     "plugins": [
       "unicorn",
@@ -666,6 +687,9 @@
     ],
   },
   {
+    "ignores": [
+      "**/*.md",
+    ],
     "name": "xwbx/regexp/rules",
     "plugins": [
       "regexp",
@@ -964,23 +988,6 @@
       "markdown/no-unused-definitions",
       "markdown/require-alt-text",
       "markdown/table-column-count",
-    ],
-  },
-  {
-    "files": [
-      "**/*.md",
-    ],
-    "name": "xwbx/markdown/disables/markdown",
-    "rules": [
-      "- command/command",
-      "- no-irregular-whitespace",
-      "- perfectionist/sort-exports",
-      "- perfectionist/sort-imports",
-      "- regexp/no-legacy-features",
-      "- regexp/no-missing-g-flag",
-      "- regexp/no-useless-dollar-replacements",
-      "- regexp/no-useless-flag",
-      "- style/indent",
     ],
   },
   {

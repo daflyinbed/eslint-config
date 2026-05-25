@@ -58,6 +58,24 @@ runWithConfig(
   },
 );
 
+// https://github.com/antfu/eslint-config/issues/837
+runWithConfig(
+  "issue-837",
+  {
+    typescript: false,
+    vue: false,
+    formatters: false,
+  },
+  {
+    rules: {
+      "no-irregular-whitespace": [
+        "warn",
+        { skipStrings: true, skipTemplates: true },
+      ],
+    },
+  },
+);
+
 function runWithConfig(
   name: string,
   configs: OptionsConfig,
