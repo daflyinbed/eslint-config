@@ -59,6 +59,7 @@ export async function markdown(_) {}
 export async function nextjs(_) {}
 export async function node() {}
 export var parserPlain /* const */
+export async function perfectionist(_) {}
 export async function pnpm(_) {}
 export async function react(_) {}
 export async function regexp(_) {}
@@ -66,7 +67,6 @@ export function renamePluginInConfigs(_, _) {}
 export function renameRules(_, _) {}
 export function resolveSubOptions(_, _) {}
 export async function solid(_) {}
-export async function sortImport() {}
 export async function sortPackageJson() {}
 export function sortTsconfig() {}
 export async function svelte(_) {}

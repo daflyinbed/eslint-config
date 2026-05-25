@@ -140,17 +140,6 @@
     ],
   },
   {
-    "name": "xwbx/sort/import",
-    "plugins": [
-      "perfectionist",
-    ],
-    "rules": [
-      "perfectionist/sort-imports",
-      "perfectionist/sort-named-exports",
-      "perfectionist/sort-named-imports",
-    ],
-  },
-  {
     "name": "xwbx/e18e/rules",
     "plugins": [
       "e18e",

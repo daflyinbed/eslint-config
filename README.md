@@ -207,7 +207,7 @@ export default xwbx({
 
 This plugin [`eslint-plugin-perfectionist`](https://github.com/azat-io/eslint-plugin-perfectionist) allows you to sort object keys, imports, etc, with auto-fix.
 
-The plugin is installed, but only `perfectionist/sort-imports`, `perfectionist/sort-named-exports` and `perfectionist/sort-named-imports` are enabled by default.
+The plugin is installed, but only `perfectionist/sort-imports`, `perfectionist/sort-exports`, `perfectionist/sort-named-exports` and `perfectionist/sort-named-imports` are enabled by default. You can disable/modify default behavior using `perfectionist` option.
 
 It's recommended to opt-in on each file individually using [configuration comments](https://eslint.org/docs/latest/use/configure/rules#using-configuration-comments-1).
 

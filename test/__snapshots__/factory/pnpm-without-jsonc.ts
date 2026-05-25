@@ -153,11 +153,12 @@
     "ignores": [
       "**/*.md",
     ],
-    "name": "xwbx/sort/import",
+    "name": "xwbx/perfectionist/setup",
     "plugins": [
       "perfectionist",
     ],
     "rules": [
+      "perfectionist/sort-exports",
       "perfectionist/sort-imports",
       "perfectionist/sort-named-exports",
       "perfectionist/sort-named-imports",

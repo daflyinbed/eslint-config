@@ -18,11 +18,11 @@ import {
   markdown,
   nextjs,
   node,
+  perfectionist,
   pnpm,
   react,
   regexp,
   solid,
-  sortImport,
   sortPackageJson,
   sortTsconfig,
   svelte,
@@ -104,10 +104,11 @@ export function xwbx(
     imports: enableImports = true,
     jsdoc: enableJsdoc = true,
     jsx: enableJsx = true,
+    nextjs: enableNextjs = false,
     node: enableNode = true,
+    perfectionist: enablePerfectionist = true,
     pnpm: enableCatalogs = !!findUpSync("pnpm-workspace.yaml"),
     react: enableReact = false,
-    nextjs: enableNextjs = false,
     regexp: enableRegexp = true,
     solid: enableSolid = false,
     svelte: enableSvelte = false,
@@ -168,8 +169,15 @@ export function xwbx(
     }),
     comments(),
     command(),
-    sortImport(),
   );
+
+  if (enablePerfectionist) {
+    configs.push(
+      perfectionist({
+        overrides: getOverrides(options, "perfectionist"),
+      }),
+    );
+  }
 
   if (enableNode) {
     configs.push(node());

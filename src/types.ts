@@ -580,6 +580,13 @@ export interface OptionsConfig
   pnpm?: boolean | OptionsPnpm;
 
   /**
+   * Options for eslint-plugin-perfectionist.
+   *
+   * @default true
+   */
+  perfectionist?: boolean | OptionsOverrides;
+
+  /**
    * Use external formatters to format files.
    *
    * Requires installing:

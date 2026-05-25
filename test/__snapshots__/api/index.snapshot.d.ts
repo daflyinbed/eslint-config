@@ -30,6 +30,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
   svelte?: boolean | OptionsOverrides;
   unocss?: boolean | OptionsUnoCSS;
   pnpm?: boolean | OptionsPnpm;
+  perfectionist?: boolean | OptionsOverrides;
   formatters?: boolean | OptionsFormatters;
   isInEditor?: boolean;
   autoRenamePlugins?: boolean;
@@ -1943,7 +1944,7 @@ export interface RuleOptions {
 
 // Types
 export type Awaitable<T> = T | Promise<T>;
-export type ConfigNames = 'xwbx/gitignore' | 'xwbx/ignores' | 'xwbx/javascript/setup' | 'xwbx/javascript/rules' | 'xwbx/eslint-comments/rules' | 'xwbx/command/rules' | 'xwbx/sort/import' | 'xwbx/node/setup' | 'xwbx/node/rules' | 'xwbx/jsdoc/setup' | 'xwbx/jsdoc/rules' | 'xwbx/formatter/setup' | 'xwbx/formatter/jslike' | 'xwbx/formatter/vue' | 'xwbx/formatter/json' | 'xwbx/formatter/jsonc' | 'xwbx/formatter/json5' | 'xwbx/formatter/toml' | 'xwbx/formatter/css' | 'xwbx/formatter/scss' | 'xwbx/formatter/less' | 'xwbx/formatter/html' | 'xwbx/formatter/xml' | 'xwbx/formatter/svg' | 'xwbx/formatter/markdown' | 'xwbx/formatter/astro' | 'xwbx/formatter/astro/disables' | 'xwbx/formatter/svelte' | 'xwbx/formatter/svelte/disables' | 'xwbx/formatter/graphql' | 'xwbx/formatter/yaml' | 'xwbx/imports/rules' | 'xwbx/e18e/rules' | 'xwbx/unicorn' | 'xwbx/jsx/setup' | 'xwbx/typescript/setup' | 'xwbx/typescript/parser' | 'xwbx/typescript/type-aware-parser' | 'xwbx/typescript/rules' | 'xwbx/typescript/rules-type-aware' | 'antfu/typescript/erasable-syntax-only' | 'xwbx/regexp/rules' | 'xwbx/test' | 'xwbx/vue/setup' | 'xwbx/vue/rules' | 'xwbx/react/setup' | 'xwbx/react/rules' | 'xwbx/react/typescript' | 'xwbx/react/type-aware-rules' | 'xwbx/nextjs/setup' | 'xwbx/nextjs/rules' | 'xwbx/solid/setup' | 'xwbx/solid/rules' | 'xwbx/angular/setup' | 'xwbx/angular/rules/ts' | 'xwbx/angular/rules/template' | 'xwbx/svelte/setup' | 'xwbx/svelte/rules' | 'xwbx/unocss' | 'xwbx/astro' | 'xwbx/jsonc' | 'xwbx/sort/package-json' | 'xwbx/sort/tsconfig-json' | 'xwbx/pnpm/package-json' | 'xwbx/pnpm/pnpm-workspace-yaml' | 'xwbx/pnpm/pnpm-workspace-yaml-sort' | 'xwbx/yaml/rules' | 'xwbx/toml' | 'xwbx/markdown/setup' | 'xwbx/markdown/processor' | 'xwbx/markdown/parser' | 'xwbx/markdown/rules' | 'xwbx/markdown/disables/code' | 'xwbx/disables/scripts' | 'xwbx/disables/cli' | 'xwbx/disables/bin' | 'xwbx/disables/dts' | 'xwbx/disables/cjs' | 'xwbx/disables/config-files';
+export type ConfigNames = 'xwbx/gitignore' | 'xwbx/ignores' | 'xwbx/javascript/setup' | 'xwbx/javascript/rules' | 'xwbx/eslint-comments/rules' | 'xwbx/command/rules' | 'xwbx/perfectionist/setup' | 'xwbx/node/setup' | 'xwbx/node/rules' | 'xwbx/jsdoc/setup' | 'xwbx/jsdoc/rules' | 'xwbx/formatter/setup' | 'xwbx/formatter/jslike' | 'xwbx/formatter/vue' | 'xwbx/formatter/json' | 'xwbx/formatter/jsonc' | 'xwbx/formatter/json5' | 'xwbx/formatter/toml' | 'xwbx/formatter/css' | 'xwbx/formatter/scss' | 'xwbx/formatter/less' | 'xwbx/formatter/html' | 'xwbx/formatter/xml' | 'xwbx/formatter/svg' | 'xwbx/formatter/markdown' | 'xwbx/formatter/astro' | 'xwbx/formatter/astro/disables' | 'xwbx/formatter/svelte' | 'xwbx/formatter/svelte/disables' | 'xwbx/formatter/graphql' | 'xwbx/formatter/yaml' | 'xwbx/imports/rules' | 'xwbx/e18e/rules' | 'xwbx/unicorn' | 'xwbx/jsx/setup' | 'xwbx/typescript/setup' | 'xwbx/typescript/parser' | 'xwbx/typescript/type-aware-parser' | 'xwbx/typescript/rules' | 'xwbx/typescript/rules-type-aware' | 'antfu/typescript/erasable-syntax-only' | 'xwbx/regexp/rules' | 'xwbx/test' | 'xwbx/vue/setup' | 'xwbx/vue/rules' | 'xwbx/react/setup' | 'xwbx/react/rules' | 'xwbx/react/typescript' | 'xwbx/react/type-aware-rules' | 'xwbx/nextjs/setup' | 'xwbx/nextjs/rules' | 'xwbx/solid/setup' | 'xwbx/solid/rules' | 'xwbx/angular/setup' | 'xwbx/angular/rules/ts' | 'xwbx/angular/rules/template' | 'xwbx/svelte/setup' | 'xwbx/svelte/rules' | 'xwbx/unocss' | 'xwbx/astro' | 'xwbx/jsonc' | 'xwbx/sort/package-json' | 'xwbx/sort/tsconfig-json' | 'xwbx/pnpm/package-json' | 'xwbx/pnpm/pnpm-workspace-yaml' | 'xwbx/pnpm/pnpm-workspace-yaml-sort' | 'xwbx/yaml/rules' | 'xwbx/toml' | 'xwbx/markdown/setup' | 'xwbx/markdown/processor' | 'xwbx/markdown/parser' | 'xwbx/markdown/rules' | 'xwbx/markdown/disables/code' | 'xwbx/disables/scripts' | 'xwbx/disables/cli' | 'xwbx/disables/bin' | 'xwbx/disables/dts' | 'xwbx/disables/cjs' | 'xwbx/disables/config-files';
 export type OptionsTypescript = (OptionsTypeScriptWithTypes & OptionsOverrides & OptionsTypeScriptErasableOnly) | (OptionsTypeScriptParserOptions & OptionsOverrides & OptionsTypeScriptErasableOnly);
 export type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
 export type Rules = Record<string, Linter.RuleEntry<any> | undefined> & RuleOptions;
@@ -1978,6 +1979,7 @@ export declare function jsx(_?: OptionsJSX): Promise<TypedFlatConfigItem[]>;
 export declare function markdown(_?: OptionsFiles & OptionsComponentExts & OptionsMarkdown): Promise<TypedFlatConfigItem[]>;
 export declare function nextjs(_?: OptionsOverrides & OptionsFiles): Promise<TypedFlatConfigItem[]>;
 export declare function node(): Promise<TypedFlatConfigItem[]>;
+export declare function perfectionist(_?: OptionsOverrides): Promise<TypedFlatConfigItem[]>;
 export declare function pnpm(_: OptionsPnpm): Promise<TypedFlatConfigItem[]>;
 export declare function react(_?: OptionsTypeScriptParserOptions & OptionsTypeScriptWithTypes & OptionsReact & OptionsFiles): Promise<TypedFlatConfigItem[]>;
 export declare function regexp(_?: OptionsRegExp & OptionsOverrides): Promise<TypedFlatConfigItem[]>;
@@ -1985,7 +1987,6 @@ export declare function renamePluginInConfigs(_: TypedFlatConfigItem[], _: Recor
 export declare function renameRules(_: Record<string, any>, _: Record<string, string>): Record<string, any>;
 export declare function resolveSubOptions<K extends keyof OptionsConfig>(_: OptionsConfig, _: K): ResolvedOptions<OptionsConfig[K]>;
 export declare function solid(_?: OptionsHasTypeScript & OptionsOverrides & OptionsFiles & OptionsTypeScriptWithTypes): Promise<TypedFlatConfigItem[]>;
-export declare function sortImport(): Promise<TypedFlatConfigItem[]>;
 export declare function sortPackageJson(): Promise<TypedFlatConfigItem[]>;
 export declare function sortTsconfig(): TypedFlatConfigItem[];
 export declare function svelte(_?: OptionsHasTypeScript & OptionsOverrides & OptionsFiles): Promise<TypedFlatConfigItem[]>;

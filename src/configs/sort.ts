@@ -1,4 +1,3 @@
-import { pluginPerfectionist } from "../plugins";
 import type { TypedFlatConfigItem } from "../types";
 
 /**
@@ -241,54 +240,6 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
               "skipLibCheck",
             ],
             pathPattern: "^compilerOptions$",
-          },
-        ],
-      },
-    },
-  ];
-}
-
-export async function sortImport(): Promise<TypedFlatConfigItem[]> {
-  return [
-    {
-      name: "xwbx/sort/import",
-      plugins: {
-        perfectionist: pluginPerfectionist,
-      },
-      rules: {
-        "perfectionist/sort-imports": [
-          "warn",
-          {
-            groups: [
-              "builtin",
-              "external",
-              "internal",
-              "parent",
-              "subpath",
-              "sibling",
-              "index",
-              "style",
-              "type",
-              "side-effect",
-              "side-effect-style",
-            ],
-            internalPattern: ["^[~@#]/.*"],
-            newlinesBetween: "ignore",
-            type: "natural",
-          },
-        ],
-        "perfectionist/sort-named-exports": [
-          "warn",
-          {
-            groups: ["value-export", "type-export"],
-            type: "natural",
-          },
-        ],
-        "perfectionist/sort-named-imports": [
-          "warn",
-          {
-            groups: ["value-import", "type-import"],
-            type: "natural",
           },
         ],
       },

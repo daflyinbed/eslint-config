@@ -15,6 +15,7 @@ export * from "./jsx";
 export * from "./markdown";
 export * from "./nextjs";
 export * from "./node";
+export * from "./perfectionist";
 export * from "./pnpm";
 export * from "./react";
 export * from "./regexp";
