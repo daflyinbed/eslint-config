@@ -12,6 +12,7 @@
     ],
     "rules": [
       "accessor-pairs",
+      "antfu/top-level-function",
       "array-callback-return",
       "block-scoped-var",
       "constructor-super",
@@ -50,13 +51,13 @@
       "no-implied-eval",
       "no-import-assign",
       "no-invalid-regexp",
+      "no-invalid-this",
       "no-irregular-whitespace",
       "no-iterator",
       "no-labels",
       "no-lone-blocks",
       "no-loss-of-precision",
       "no-misleading-character-class",
-      "no-invalid-this",
       "no-multi-str",
       "no-new",
       "no-new-func",
@@ -119,7 +120,6 @@
       "valid-typeof",
       "vars-on-top",
       "yoda",
-      "antfu/top-level-function",
     ],
   },
   {
@@ -232,8 +232,8 @@
     ],
     "name": "xwbx/formatter/jslike",
     "rules": [
-      "style/quotes",
       "format/prettier",
+      "style/quotes",
     ],
   },
   {
@@ -248,8 +248,8 @@
     },
     "name": "xwbx/formatter/vue",
     "rules": [
-      "style/quotes",
       "format/prettier",
+      "style/quotes",
     ],
   },
   {
@@ -478,11 +478,11 @@
       "antfu/no-import-node-modules-by-path",
       "import/consistent-type-specifier-style",
       "import/first",
+      "import/newline-after-import",
       "import/no-duplicates",
       "import/no-mutable-exports",
       "import/no-named-default",
       "- import/order",
-      "import/newline-after-import",
     ],
   },
   {
@@ -786,12 +786,12 @@
       "test/no-only-tests",
       "test/prefer-hooks-in-order",
       "test/prefer-lowercase-title",
-      "- unicorn/consistent-function-scoping",
       "- antfu/no-top-level-await",
       "- e18e/prefer-static-regex",
       "- no-unused-expressions",
       "- node/prefer-global/process",
       "- ts/explicit-function-return-type",
+      "- unicorn/consistent-function-scoping",
     ],
   },
   {
