@@ -6,6 +6,9 @@ import {
 import { xwbx } from "../src/factory";
 import type { OptionsConfig, TypedFlatConfigItem } from "../src/types";
 
+const isWindows = process.platform === "win32";
+const timeout = isWindows ? 300_000 : 60_000;
+
 interface Suite {
   name: string;
   configs: OptionsConfig;
@@ -105,10 +108,14 @@ function serializeConfigs(configs: TypedFlatConfigItem[]) {
 }
 
 for (const { name, configs } of suites) {
-  it.concurrent(`factory ${name}`, async ({ expect }) => {
-    const config = await xwbx(configs);
-    await expect(serializeConfigs(config)).toMatchFileSnapshot(
-      `./__snapshots__/factory/${name}.ts`,
-    );
-  });
+  it.concurrent(
+    `factory ${name}`,
+    async ({ expect }) => {
+      const config = await xwbx(configs);
+      await expect(serializeConfigs(config)).toMatchFileSnapshot(
+        `./__snapshots__/factory/${name}.ts`,
+      );
+    },
+    timeout,
+  );
 }
