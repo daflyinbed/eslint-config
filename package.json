@@ -38,13 +38,14 @@
     "@unocss/eslint-plugin": ">=0.50.0",
     "astro-eslint-parser": ">=1.0.2",
     "eslint": "^9.10.0 || ^10.0.0",
-    "eslint-plugin-astro": "^1.2.0",
+    "eslint-plugin-astro": ">=1.2.0",
     "eslint-plugin-jsx-a11y": ">=6.10.2",
     "eslint-plugin-react-refresh": "^0.5.0",
     "eslint-plugin-solid": "^0.14.3",
     "eslint-plugin-svelte": ">=2.35.1",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-slidev": "^1.0.5",
     "prettier-plugin-svelte": ">=3.0.0",
     "svelte-eslint-parser": ">=0.37.0"
   },
@@ -92,6 +93,9 @@
       "optional": true
     },
     "prettier-plugin-astro": {
+      "optional": true
+    },
+    "prettier-plugin-slidev": {
       "optional": true
     },
     "prettier-plugin-svelte": {
@@ -160,20 +164,24 @@
     "eslint-plugin-react-refresh": "catalog:peer",
     "eslint-plugin-solid": "catalog:peer",
     "eslint-plugin-svelte": "catalog:peer",
+    "eslint-plugin-vuejs-accessibility": "catalog:peer",
     "eslint-typegen": "catalog:dev",
     "find-up-simple": "catalog:inline",
     "husky": "catalog:dev",
     "lint-staged": "catalog:dev",
+    "pnpm-workspace-yaml": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
+    "prettier-plugin-slidev": "catalog:peer",
     "prettier-plugin-svelte": "catalog:peer",
+    "svelte": "catalog:peer",
     "svelte-eslint-parser": "catalog:peer",
     "tinyexec": "catalog:dev",
     "tinyglobby": "catalog:dev",
     "tsdown": "catalog:dev",
-    "tsnapi": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",
-    "vitest": "catalog:dev"
+    "vitest": "catalog:dev",
+    "vue": "catalog:peer"
   },
   "resolutions": {
     "@eslint-community/eslint-utils": "catalog:peer",
@@ -181,7 +189,6 @@
     "@typescript-eslint/utils": "catalog:peer",
     "chokidar": "catalog:dev",
     "eslint": "catalog:peer",
-    "eslint-plugin-depend": "1.4.0",
     "tsx": "catalog:dev"
   },
   "lint-staged": {
@@ -189,10 +196,10 @@
   },
   "inlinedDependencies": {
     "@eslint-community/eslint-utils": "4.9.1",
-    "@typescript-eslint/scope-manager": "8.59.4",
-    "@typescript-eslint/types": "8.59.4",
-    "@typescript-eslint/utils": "8.59.4",
-    "@typescript-eslint/visitor-keys": "8.59.4",
+    "@typescript-eslint/scope-manager": "8.62.0",
+    "@typescript-eslint/types": "8.62.0",
+    "@typescript-eslint/utils": "8.62.0",
+    "@typescript-eslint/visitor-keys": "8.62.0",
     "cached-factory": "0.3.0",
     "eslint-plugin-erasable-syntax-only": "0.4.2",
     "eslint-visitor-keys": ["3.4.3", "5.0.1"],
