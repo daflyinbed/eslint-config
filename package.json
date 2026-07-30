@@ -2,7 +2,7 @@
   "name": "@xwbx/eslint-config",
   "type": "module",
   "version": "0.14.0",
-  "packageManager": "pnpm@10.28.0",
+  "packageManager": "pnpm@11.9.0",
   "description": "xwbx's ESLint config",
   "author": "xwbx <1677759063@qq.com> (https://github.com/daflyinbed/)",
   "license": "MIT",
@@ -193,8 +193,8 @@
     "@typescript-eslint/types": "8.59.4",
     "@typescript-eslint/utils": "8.59.4",
     "@typescript-eslint/visitor-keys": "8.59.4",
-    "cached-factory": "0.2.0",
-    "eslint-plugin-erasable-syntax-only": "0.4.1",
+    "cached-factory": "0.3.0",
+    "eslint-plugin-erasable-syntax-only": "0.4.2",
     "eslint-visitor-keys": ["3.4.3", "5.0.1"],
     "find-up-simple": "1.0.1"
   }

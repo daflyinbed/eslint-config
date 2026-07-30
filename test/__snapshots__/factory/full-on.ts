@@ -514,13 +514,16 @@
     ],
   },
   {
-    "ignores": [
-      "**/*.md",
-    ],
-    "name": "xwbx/unicorn",
+    "name": "xwbx/unicorn/setup",
     "plugins": [
       "unicorn",
     ],
+  },
+  {
+    "files": [
+      "**/*.?([cm])[jt]s?(x)",
+    ],
+    "name": "xwbx/unicorn/rules",
     "rules": [
       "unicorn/catch-error-name",
       "unicorn/consistent-empty-array-spread",
@@ -529,7 +532,7 @@
       "unicorn/escape-case",
       "unicorn/explicit-length-check",
       "unicorn/new-for-builtins",
-      "unicorn/no-array-for-each",
+      "unicorn/no-for-each",
       "unicorn/no-array-method-this-argument",
       "unicorn/no-array-push-push",
       "unicorn/no-await-in-promise-methods",
@@ -1173,6 +1176,7 @@
       "react/dom-no-void-elements-with-children",
       "react/web-api-no-leaked-event-listener",
       "react/web-api-no-leaked-fetch",
+      "react/web-api-no-leaked-intersection-observer",
       "react/web-api-no-leaked-interval",
       "react/web-api-no-leaked-resize-observer",
       "react/web-api-no-leaked-timeout",

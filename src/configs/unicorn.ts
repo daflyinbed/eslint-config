@@ -1,5 +1,5 @@
+import { GLOB_SRC } from "../globs";
 import { pluginUnicorn } from "../plugins";
-
 import type { OptionsUnicorn, TypedFlatConfigItem } from "../types";
 
 export async function unicorn(
@@ -8,10 +8,14 @@ export async function unicorn(
   const { allRecommended = false, overrides = {} } = options;
   return [
     {
-      name: "xwbx/unicorn",
+      name: "xwbx/unicorn/setup",
       plugins: {
         unicorn: pluginUnicorn,
       },
+    },
+    {
+      files: [GLOB_SRC],
+      name: "xwbx/unicorn/rules",
       rules: {
         ...(allRecommended
           ? (pluginUnicorn.configs.recommended.rules as any)
@@ -23,13 +27,13 @@ export async function unicorn(
               "unicorn/escape-case": "error",
               "unicorn/explicit-length-check": "error",
               "unicorn/new-for-builtins": "error",
-              "unicorn/no-array-for-each": "error",
               // disabled for better bundle size
               // 'unicorn/no-array-callback-reference': 'error',
               "unicorn/no-array-method-this-argument": "error",
               "unicorn/no-array-push-push": "error",
               "unicorn/no-await-in-promise-methods": "error",
               "unicorn/no-console-spaces": "error",
+              "unicorn/no-for-each": "error",
               "unicorn/no-for-loop": "error",
               "unicorn/no-hex-escape": "error",
               "unicorn/no-instanceof-builtins": "error",
