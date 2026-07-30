@@ -347,6 +347,10 @@ export default xwbx({
     overrides: {
       "ts/consistent-type-definitions": ["error", "interface"],
     },
+    // type aware rules overrides should write here
+    overridesTypeAware: {
+      "ts/no-unsafe-assignment": ["warn"],
+    },
   },
   yaml: {
     overrides: {
